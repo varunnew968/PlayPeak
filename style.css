@@ -222,3 +222,78 @@ main { width: min(var(--content), calc(100% - 64px)); margin: 0 auto; }
 @media (max-width: 560px) { html { scroll-padding-top: 78px; } main { width: calc(100% - 24px); } .topbar { gap: 9px; padding: 9px 12px; } .brand-mark { width: 37px; height: 37px; border-radius: 12px; } .search { gap: 8px; padding: 0 10px; border-radius: 13px; } .search kbd { display: none; } .icon-btn { width: 39px; height: 39px; flex-basis: 39px; border-radius: 12px; } .hero { grid-template-columns: 1fr; min-height: 246px; margin-top: 15px; padding: 26px 22px; } .hero-copy { max-width: 100%; } .hero h1 { font-size: 40px; } .hero p { max-width: 280px; font-size: 13px; margin: 12px 0 18px; } .hero-art { position: absolute; right: -35px; bottom: -21px; width: 175px; min-height: 150px; opacity: .52; transform: scale(.65); transform-origin: bottom right; pointer-events: none; } .hero::before { right: -220px; top: -140px; } .ad-slot { min-height: 75px; margin: 20px 0 25px; padding: 15px 8px 8px; border-radius: 13px; } .section-block { margin: 28px 0; } .section-heading { gap: 8px; margin-bottom: 14px; } .section-heading h2 { font-size: 19px; } .section-heading p { font-size: 11px; } .section-emoji { margin-right: 6px; font-size: 19px; } .text-btn { gap: 5px; padding-right: 0; font-size: 11px; } .featured-grid { gap: 10px; } .feature-card { min-height: 134px; padding: 12px; border-radius: 16px; aspect-ratio: 1.42 / 1; } .feature-badge { padding: 5px 7px; font-size: 8px; } .play-circle { width: 27px; height: 27px; flex-basis: 27px; } .feature-info h3 { font-size: 12px; line-height: 1.22; } .feature-info p { font-size: 9px; } .category-strip { top: 56px; gap: 7px; margin: 14px 0 18px; padding: 7px 0; } .category-chip { min-height: 36px; padding: 0 11px; border-radius: 11px; font-size: 11px; } .game-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 11px 9px; } .game-card { border-radius: 15px; } .game-cover { min-height: 105px; aspect-ratio: 1.35 / 1; } .game-art { width: 58px; height: 58px; border-radius: 19px; font-size: 32px; } .game-play { right: 8px; bottom: 8px; width: 27px; height: 27px; } .game-meta { min-height: 69px; padding: 10px 10px 11px; } .game-meta h3 { font-size: 11px; } .game-meta p { gap: 5px; font-size: 9px; } .rating,.quick-play-label { font-size: 9px; } .result-count { padding: 6px 8px; font-size: 10px; } .player-view { padding-top: 15px; } .player-heading { gap: 12px; margin: 19px 0 16px; } .player-heading h1 { font-size: 28px; } .player-heading p { font-size: 12px; } .game-frame-wrap { min-height: 215px; aspect-ratio: 4 / 3; border-radius: 15px; } .game-frame-wrap iframe { min-height: 215px; } .game-frame-placeholder { padding: 15px; } .game-frame-placeholder h2 { font-size: 17px; } .game-frame-placeholder p { font-size: 11px; } .player-toolbar { flex-wrap: wrap; padding: 9px 10px; } .player-toolbar span { font-size: 9px; } .about-game { padding: 15px; } .related-list { grid-template-columns: 1fr; } .footer { margin-top: 32px; padding: 27px 15px 23px; } }
 @media (max-width: 360px) { .hero h1 { font-size: 35px; } .featured-grid { grid-template-columns: 1fr; } .feature-card { min-height: 130px; aspect-ratio: 2 / 1; } .game-cover { min-height: 95px; } .game-meta h3 { font-size: 10px; } }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+
+
+/* =========================================================
+   PLAYPEAK — SELECTED AD UNIT RESPONSIVENESS
+   Desktop 728x90, mobile 320x50, native banner, 300x250
+   ========================================================= */
+.ad-responsive-banners {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+}
+.ad-unit {
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  max-width: 100%;
+}
+.ad-unit-desktop { display: flex; }
+.ad-unit-mobile { display: none; }
+.ad-unit-desktop iframe {
+  display: block;
+  width: 728px;
+  max-width: 100%;
+  height: 90px;
+  border: 0;
+}
+.ad-unit-mobile iframe {
+  display: block;
+  width: 320px;
+  max-width: 100%;
+  height: 50px;
+  border: 0;
+}
+.ad-native-slot { min-height: 150px; }
+.native-ad-code {
+  display: block;
+  min-height: 110px;
+  width: 100%;
+  max-width: 100%;
+}
+#container-1d3941c589157fb5980a046ad26aa5ed {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+}
+#container-1d3941c589157fb5980a046ad26aa5ed iframe,
+#container-1d3941c589157fb5980a046ad26aa5ed img {
+  max-width: 100%;
+}
+.ad-slot.player-ad {
+  min-height: 292px;
+}
+.player-ad-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  width: 100%;
+  max-width: 100%;
+}
+.player-ad-code iframe {
+  display: block;
+  width: 300px;
+  max-width: 100%;
+  height: 250px;
+  border: 0;
+}
+@media (max-width: 780px) {
+  .ad-unit-desktop { display: none; }
+  .ad-unit-mobile { display: flex; }
+  .ad-responsive-banners { min-height: 50px; }
+  .ad-top { min-height: 76px; }
+}
