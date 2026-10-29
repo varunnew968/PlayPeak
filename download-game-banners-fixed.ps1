@@ -1,7 +1,5 @@
-# Arcade Pop / PlayPeak — download official Gamezop game covers locally
-# Run this from the website root folder (the folder containing script.js).
-# It creates assets/game-banners and updates each game's image: property in script.js.
-
+# PlayPeak / Arcade Pop — download Gamezop banners and link them in script.js
+# Run from the website root, next to index.html and script.js.
 $ErrorActionPreference = 'Stop'
 
 $games = @(
@@ -20,7 +18,14 @@ $games = @(
   @{ Id = 'UCS62KJ8c'; Slug = 'blocks-adventure-jungle-saga' }
 )
 
-$assetDir = Join-Path (Get-Location) 'assets\game-banners'
+$root = (Get-Location).Path
+$scriptPath = Join-Path $root 'script.js'
+if (!(Test-Path $scriptPath)) {
+  Write-Error "script.js not found in $root. Open PowerShell in your website root folder and run this again."
+  exit 1
+}
+
+$assetDir = Join-Path $root 'assets\game-banners'
 New-Item -ItemType Directory -Path $assetDir -Force | Out-Null
 
 function Get-ImageExtension([string]$path) {
@@ -33,17 +38,20 @@ function Get-ImageExtension([string]$path) {
 }
 
 $downloaded = @{}
-$tempPath = Join-Path $assetDir '_download.tmp'
+$tempPath = Join-Path $assetDir '_game-banner-download.tmp'
 
 foreach ($game in $games) {
-  $coverUrl = "https://business.gamezop.com/img/gamezop/$($game.Id)/cover.jpg?q=50&w=600"
-  $fallbackUrl = "https://static.gamezop.com/$($game.Id)/wall.png"
   $savedPath = $null
+  # The wall.png path is the image used by Gamezop's own game pages.
+  $urls = @(
+    "https://static.gamezop.com/$($game.Id)/wall.png",
+    "https://business.gamezop.com/img/gamezop/$($game.Id)/cover.jpg?q=50&w=600"
+  )
 
-  foreach ($url in @($coverUrl, $fallbackUrl)) {
+  foreach ($url in $urls) {
     try {
       if (Test-Path $tempPath) { Remove-Item $tempPath -Force }
-      Write-Host "Downloading $($game.Slug)..." -ForegroundColor Cyan
+      Write-Host "Downloading $($game.Slug) from $url" -ForegroundColor Cyan
       Invoke-WebRequest -Uri $url -OutFile $tempPath -UseBasicParsing -TimeoutSec 25
       $ext = Get-ImageExtension $tempPath
       if ($ext) {
@@ -54,42 +62,38 @@ foreach ($game in $games) {
         Write-Host "  Saved: $savedPath" -ForegroundColor Green
         break
       }
-    }
-    catch {
-      # Try the fallback URL next.
+    } catch {
+      # Try the next official image URL.
     }
     if (Test-Path $tempPath) { Remove-Item $tempPath -Force }
   }
 
   if ($savedPath) {
-    $downloaded[$game.Id] = $savedPath
+    # IMPORTANT: match the JavaScript game object's slug ID, not the Gamezop embed ID.
+    $downloaded[$game.Slug] = $savedPath
   } else {
-    Write-Warning "Could not download image for $($game.Slug). Its existing image setting will be unchanged."
+    Write-Warning "Could not download a valid image for $($game.Slug)."
   }
 }
 
 if (Test-Path $tempPath) { Remove-Item $tempPath -Force }
-
-$scriptPath = Join-Path (Get-Location) 'script.js'
-if (!(Test-Path $scriptPath)) {
-  Write-Warning "Images downloaded where possible, but script.js was not found in this folder. Run the script from your website root to update image paths."
-  exit 0
-}
-
 $content = [System.IO.File]::ReadAllText($scriptPath)
-foreach ($game in $games) {
-  if (!$downloaded.ContainsKey($game.Id)) { continue }
-  $imagePath = $downloaded[$game.Id]
-  $escapedId = [regex]::Escape($game.Id)
-  $pattern = '(?s)(id\s*:\s*"' + $escapedId + '".*?image\s*:\s*)"[^"]*"'
+
+foreach ($slug in $downloaded.Keys) {
+  $imagePath = $downloaded[$slug]
+  $escapedSlug = [regex]::Escape($slug)
+  $pattern = '(?s)(id\s*:\s*"' + $escapedSlug + '".*?image\s*:\s*)"[^"]*"'
   $replacement = [System.Text.RegularExpressions.MatchEvaluator]{ param($match) $match.Groups[1].Value + '"' + $imagePath + '"' }
   $regex = [System.Text.RegularExpressions.Regex]::new($pattern)
-  $content = $regex.Replace($content, $replacement, 1)
+  $updated = $regex.Replace($content, $replacement, 1)
+  if ($updated -eq $content) {
+    Write-Warning "Downloaded $slug, but no matching id was found in script.js. Verify the game's id field."
+  }
+  $content = $updated
 }
-[System.IO.File]::WriteAllText($scriptPath, $content, (New-Object System.Text.UTF8Encoding($false)))
 
+[System.IO.File]::WriteAllText($scriptPath, $content, (New-Object System.Text.UTF8Encoding($false)))
 Write-Host ''
-Write-Host "Finished. Downloaded $($downloaded.Count) of $($games.Count) banners." -ForegroundColor Green
-Write-Host 'Updated script.js to use local assets for successfully downloaded images.' -ForegroundColor Green
-Write-Host 'Please check the assets/game-banners folder, then test the site before committing.' -ForegroundColor Yellow
-Write-Host 'Only use Gamezop artwork in line with the provider terms and any required publisher permissions.' -ForegroundColor Yellow
+Write-Host "Finished: downloaded and linked $($downloaded.Count) of $($games.Count) banners." -ForegroundColor Green
+Write-Host "Check assets\game-banners, then refresh the website with Ctrl+F5." -ForegroundColor Yellow
+Write-Host "Keep Gamezop artwork subject to the provider's applicable terms and permissions." -ForegroundColor Yellow
