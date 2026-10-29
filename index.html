@@ -1,16 +1,30 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>
+    atOptions = {
+      'key': 'e4c3f169730825da3a01dde9cdbc3f1c',
+      'format': 'iframe',
+      'height': 250,
+      'width': 300,
+      'params': {}
+    };
+  </script>
+  <script src="https://bicea.org/22/e4c3f169730825da3a01dde9cdbc3f1c"></script>
+  <script data-cfasync="false" src="https://bicea.org/14/8e75d2e21703f3006e82d07ce1e51296"></script>
+  <script src="https://pl32069423.profitableratecpmnetwork.com/79/4a/e6/794ae68609481f2429e5f6ab719ddfe8.js"></script>
   <meta name="theme-color" content="#f6f7ff">
   <meta name="description" content="Discover and play fun browser games on Arcade Pop.">
-  <title>Arcade Pop — Play something fun</title>
+  <title>PlayPeak — Play something fun</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header class="topbar">
     <button class="brand" id="homeBtn" aria-label="Arcade Pop home">
@@ -34,9 +48,12 @@
           <button class="primary-btn" id="exploreBtn">Explore games <span>→</span></button>
         </div>
         <div class="hero-art" aria-hidden="true">
-          <div class="art-sun"></div><div class="art-star star-one">✦</div><div class="art-star star-two">✦</div>
+          <div class="art-sun"></div>
+          <div class="art-star star-one">✦</div>
+          <div class="art-star star-two">✦</div>
           <div class="art-controller"><span></span><i></i><b>＋</b><em>●</em></div>
-          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
         </div>
       </section>
 
@@ -48,7 +65,10 @@
 
       <section class="section-block" id="featuredSection">
         <div class="section-heading">
-          <div><span class="section-emoji">⚡</span><h2>Quick-play picks</h2><p>Fun games for a few free minutes</p></div>
+          <div><span class="section-emoji">⚡</span>
+            <h2>Quick-play picks</h2>
+            <p>Fun games for a few free minutes</p>
+          </div>
           <button class="text-btn" data-category="All">View all <span>→</span></button>
         </div>
         <div class="featured-grid" id="featuredGrid"></div>
@@ -58,11 +78,17 @@
 
       <section class="section-block games-section" id="gamesSection">
         <div class="section-heading">
-          <div><span class="section-emoji">🎮</span><h2 id="catalogTitle">Explore games</h2><p id="catalogSubtitle">Find your next favourite</p></div>
+          <div><span class="section-emoji">🎮</span>
+            <h2 id="catalogTitle">Explore games</h2>
+            <p id="catalogSubtitle">Find your next favourite</p>
+          </div>
           <span class="result-count" id="resultCount"></span>
         </div>
         <div class="game-grid" id="gameGrid"></div>
-        <div class="empty-state hidden" id="emptyState"><span>🕹️</span><h3>No games found</h3><p>Try another search or category.</p><button class="secondary-btn" id="resetFilters">Clear filters</button></div>
+        <div class="empty-state hidden" id="emptyState"><span>🕹️</span>
+          <h3>No games found</h3>
+          <p>Try another search or category.</p><button class="secondary-btn" id="resetFilters">Clear filters</button>
+        </div>
       </section>
 
       <div class="ad-slot ad-bottom" aria-label="Advertisement">
@@ -75,7 +101,10 @@
     <section id="playerView" class="player-view hidden">
       <button class="back-btn" id="backBtn"><span>←</span> Back to games</button>
       <div class="player-heading">
-        <div><span class="player-kicker" id="playerCategory">ARCADE</span><h1 id="playerTitle">Game title</h1><p id="playerDescription"></p></div>
+        <div><span class="player-kicker" id="playerCategory">ARCADE</span>
+          <h1 id="playerTitle">Game title</h1>
+          <p id="playerDescription"></p>
+        </div>
         <button class="icon-btn favorite-toggle" id="favoriteToggle" aria-label="Add to favorites">♡</button>
       </div>
       <div class="player-layout">
@@ -85,14 +114,26 @@
               <div class="placeholder-icon">🎮</div>
               <h2>Game embed not configured yet</h2>
               <p>Add this game's official, permitted embed URL in <code>script.js</code> to enable play here.</p>
-              <a id="openOfficialLink" class="primary-btn" href="#" target="_blank" rel="noopener noreferrer">Open official game page ↗</a>
+              <a id="openOfficialLink" class="primary-btn" href="#" target="_blank" rel="noopener noreferrer">Open
+                official game page ↗</a>
             </div>
           </div>
-          <div class="player-toolbar"><span>🛡️ Play safely · No downloads needed</span><button id="fullscreenBtn">⛶ Fullscreen</button></div>
-          <div class="ad-slot player-ad" aria-label="Advertisement"><span class="ad-label">ADVERTISEMENT</span><div class="ad-placeholder" id="playerAdPlaceholder">Ad space ·  responsive banner</div><div class="ad-code" id="playerAdCode"></div></div>
-          <div class="about-game"><h2>About this game</h2><p id="aboutDescription"></p><div class="tag-row" id="gameTags"></div></div>
+          <div class="player-toolbar"><span>🛡️ Play safely · No downloads needed</span><button id="fullscreenBtn">⛶
+              Fullscreen</button></div>
+          <div class="ad-slot player-ad" aria-label="Advertisement"><span class="ad-label">ADVERTISEMENT</span>
+            <div class="ad-placeholder" id="playerAdPlaceholder">Ad space · responsive banner</div>
+            <div class="ad-code" id="playerAdCode"></div>
+          </div>
+          <div class="about-game">
+            <h2>About this game</h2>
+            <p id="aboutDescription"></p>
+            <div class="tag-row" id="gameTags"></div>
+          </div>
         </div>
-        <aside class="related-panel"><h2>More to try</h2><div id="relatedGames" class="related-list"></div></aside>
+        <aside class="related-panel">
+          <h2>More to try</h2>
+          <div id="relatedGames" class="related-list"></div>
+        </aside>
       </div>
     </section>
   </main>
@@ -100,11 +141,13 @@
   <footer class="footer">
     <div class="footer-brand"><span class="brand-mark">A<span>!</span></span><strong>arcadepop</strong></div>
     <p>A little play goes a long way.</p>
-    <div class="footer-links"><a href="#privacy" id="privacyLink">Privacy</a><a href="#contact" id="contactLink">Contact</a><a href="#licensing" id="licensingLink">Game credits</a></div>
+    <div class="footer-links"><a href="#privacy" id="privacyLink">Privacy</a><a href="#contact"
+        id="contactLink">Contact</a><a href="#licensing" id="licensingLink">Game credits</a></div>
     <small>© <span id="year"></span> Arcade Pop. Game trademarks belong to their respective owners.</small>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="script.js"></script>
 </body>
+
 </html>
