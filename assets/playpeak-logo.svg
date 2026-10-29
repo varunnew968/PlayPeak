@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="52" viewBox="0 0 220 52" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">PlayPeak</title>
+  <desc id="desc">PlayPeak gaming logo with a mountain peak and play symbol.</desc>
+  <defs>
+    <linearGradient id="mark" x1="4" y1="3" x2="47" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8372FF"/>
+      <stop offset=".55" stop-color="#6657E8"/>
+      <stop offset="1" stop-color="#3C9FEA"/>
+    </linearGradient>
+    <linearGradient id="peak" x1="12" y1="12" x2="41" y2="39" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#D8F7FF"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <rect x="2" y="3" width="46" height="46" rx="15" fill="#171A32"/>
+    <rect x="2" y="3" width="46" height="46" rx="15" fill="url(#mark)" fill-opacity=".92"/>
+    <path d="M10.5 35.5 20.3 20.1 26.4 28.3 34.2 15.4 42 35.5H10.5Z" fill="url(#peak)"/>
+    <path d="m24.7 27.6 9.1 5.3-9.1 5.2V27.6Z" fill="#6556E8"/>
+    <circle cx="38.8" cy="11.3" r="2.2" fill="#9AF0D0"/>
+  </g>
+  <text x="58" y="34.5" fill="#171A32" font-family="Manrope, Inter, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="-1.15">Play</text>
+  <text x="107.4" y="34.5" fill="#6556E8" font-family="Manrope, Inter, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="-1.15">Peak</text>
+</svg>

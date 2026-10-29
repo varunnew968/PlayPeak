@@ -16,19 +16,28 @@
   <script src="https://bicea.org/22/e4c3f169730825da3a01dde9cdbc3f1c"></script>
   <script data-cfasync="false" src="https://bicea.org/14/8e75d2e21703f3006e82d07ce1e51296"></script>
   <script src="https://pl32069423.profitableratecpmnetwork.com/79/4a/e6/794ae68609481f2429e5f6ab719ddfe8.js"></script>
-  <meta name="theme-color" content="#f6f7ff">
-  <meta name="description" content="Discover and play fun browser games on Arcade Pop.">
-  <title>PlayPeak — Play something fun</title>
+  <meta name="theme-color" content="#f6f7fb">
+  <meta name="color-scheme" content="light">
+  <meta name="application-name" content="PlayPeak">
+  <meta property="og:site_name" content="PlayPeak">
+  <meta property="og:title" content="PlayPeak — Play something fun">
+  <meta property="og:description" content="Discover great free browser games on PlayPeak. Instant play, no downloads.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="description" content="Discover great free browser games on PlayPeak. Instant play, no downloads—just pick a game and play.">
+  <title>PlayPeak — Free Online Games to Play Instantly</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#homeView">Skip to games</a>
   <header class="topbar">
-    <button class="brand" id="homeBtn" aria-label="Arcade Pop home">
-      <span class="brand-mark">A<span>!</span></span><span class="brand-name">arcade<span>pop</span></span>
+    <button class="brand" id="homeBtn" aria-label="PlayPeak home" title="PlayPeak home">
+      <img class="brand-logo" src="assets/playpeak-logo.svg" width="204" height="48" alt="PlayPeak">
     </button>
     <form class="search" id="searchForm" role="search">
       <span aria-hidden="true">⌕</span>
@@ -42,10 +51,15 @@
     <section id="homeView">
       <section class="hero">
         <div class="hero-copy">
-          <span class="eyebrow"><span class="live-dot"></span> YOUR NEXT QUICK BREAK</span>
+          <span class="eyebrow"><span class="live-dot"></span> YOUR NEXT PLAY STARTS HERE</span>
           <h1>Big fun.<br><span>Zero downloads.</span></h1>
-          <p>Pick a game, jump in, and make your break count.</p>
-          <button class="primary-btn" id="exploreBtn">Explore games <span>→</span></button>
+          <p>Discover something fun. Jump in instantly and make every break better.</p>
+          <button class="primary-btn" id="exploreBtn">Explore games <span>↗</span></button>
+          <div class="hero-perks" aria-label="PlayPeak benefits">
+            <span><i aria-hidden="true">✓</i> Instant play</span>
+            <span><i aria-hidden="true">✓</i> No installs</span>
+            <span><i aria-hidden="true">✓</i> Play anywhere</span>
+          </div>
         </div>
         <div class="hero-art" aria-hidden="true">
           <div class="art-sun"></div>
@@ -57,15 +71,15 @@
         </div>
       </section>
 
-      <div class="ad-slot ad-top" aria-label="Advertisement">
+      <div class="ad-slot ad-top" aria-label="Advertisement" data-ad-slot="top-banner">
         <span class="ad-label">ADVERTISEMENT</span>
-        <div class="ad-placeholder" id="topAdPlaceholder">Ad space · 728 × 90</div>
+        <div class="ad-placeholder" id="topAdPlaceholder">Responsive banner · 728 × 90</div>
         <div class="ad-code" id="topAdCode"></div>
       </div>
 
       <section class="section-block" id="featuredSection">
         <div class="section-heading">
-          <div><span class="section-emoji">⚡</span>
+          <div><span class="section-emoji">✦</span>
             <h2>Quick-play picks</h2>
             <p>Fun games for a few free minutes</p>
           </div>
@@ -91,9 +105,9 @@
         </div>
       </section>
 
-      <div class="ad-slot ad-bottom" aria-label="Advertisement">
+      <div class="ad-slot ad-bottom" aria-label="Advertisement" data-ad-slot="catalog-bottom-banner">
         <span class="ad-label">ADVERTISEMENT</span>
-        <div class="ad-placeholder" id="bottomAdPlaceholder">Ad space · responsive banner</div>
+        <div class="ad-placeholder" id="bottomAdPlaceholder">Responsive banner placement</div>
         <div class="ad-code" id="bottomAdCode"></div>
       </div>
     </section>
@@ -111,7 +125,7 @@
         <div class="player-main">
 
           <div class="game-frame-wrap" id="gameFrameWrap">
-            <iframe id="gamePlayerIframe" src="about:blank" title="Gamezop Arcade" seamless="seamless"
+            <iframe id="gamePlayerIframe" src="about:blank" title="PlayPeak game player" seamless="seamless"
               allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"
               style="width:100%;height:100%;border:0;display:block;" allow="autoplay; fullscreen; gamepad">
             </iframe>
@@ -128,8 +142,8 @@
 
           <div class="player-toolbar"><span>🛡️ Play safely · No downloads needed</span><button id="fullscreenBtn">⛶
               Fullscreen</button></div>
-          <div class="ad-slot player-ad" aria-label="Advertisement"><span class="ad-label">ADVERTISEMENT</span>
-            <div class="ad-placeholder" id="playerAdPlaceholder">Ad space · responsive banner</div>
+          <div class="ad-slot player-ad" aria-label="Advertisement" data-ad-slot="player-banner"><span class="ad-label">ADVERTISEMENT</span>
+            <div class="ad-placeholder" id="playerAdPlaceholder">Responsive banner placement</div>
             <div class="ad-code" id="playerAdCode"></div>
           </div>
           <div class="about-game">
@@ -147,11 +161,11 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-brand"><span class="brand-mark">A<span>!</span></span><strong>arcadepop</strong></div>
-    <p>A little play goes a long way.</p>
+    <div class="footer-brand"><img class="footer-logo" src="assets/playpeak-logo.svg" width="188" height="44" alt="PlayPeak"></div>
+    <p>Your next favourite game is one click away.</p>
     <div class="footer-links"><a href="#privacy" id="privacyLink">Privacy</a><a href="#contact"
         id="contactLink">Contact</a><a href="#licensing" id="licensingLink">Game credits</a></div>
-    <small>© <span id="year"></span> PlayPeak. Game trademarks belong to their respective owners.</small>
+    <small>© <span id="year"></span> PlayPeak. All game names and trademarks belong to their respective owners.</small>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
