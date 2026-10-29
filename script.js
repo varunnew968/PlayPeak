@@ -1,82 +1,79 @@
 
 /* =========================================================
    ARCADE POP — COMPLETE GAME SCRIPT
+   GameZipper direct embeds + local game banners
    HTML + CSS + Vanilla JavaScript
-   GameDistribution embeds + local game banners
    ========================================================= */
 
 const GAMES = [
   {
-    id: "hyper-cars-stunt-racing",
-    title: "Hyper Cars Stunt Racing",
-    category: "Racing",
-    description: "Drive supercars, perform stunts and race through 3D tracks.",
-    art: "🏎️",
-    cover: "linear-gradient(135deg,#ff9b38,#ffdf64)",
-    image: "assets/hyper-cars.jpg",
-    rating: "4.8",
-    badge: "TRENDING",
-    tags: ["Racing", "Cars", "Stunts", "Driving"],
-    officialUrl: "https://gamedistribution.com/",
-    embedId: "93407da92fe043e7b4b70fcc919ed8a4",
-    width: 960,
-    height: 600,
-    featured: true
-  },
-  {
-    id: "arrow-go",
-    title: "Arrow Go",
+    id: "snake",
+    title: "Snake",
     category: "Arcade",
-    description: "Enjoy a quick arcade challenge in Arrow Go.",
-    art: "🏹",
-    cover: "linear-gradient(135deg,#58c6ff,#a6e7ff)",
-    image: "assets/arrow-go.jpg",
-    rating: "4.6",
-    badge: "ARCADE",
-    tags: ["Arcade", "Action", "Quick play"],
-    officialUrl: "https://gamedistribution.com/",
-    embedId: "f7be9dcb47e848178d99bffcaa396c68",
+    description: "Guide the snake, collect food, and grow without hitting the walls.",
+    art: "🐍",
+    cover: "linear-gradient(135deg,#65c96e,#cbf5a2)",
+    image: "assets/snake.jpg",
+    rating: "New",
+    badge: "CLASSIC",
+    tags: ["Arcade", "Classic", "Snake", "Quick play"],
+    officialUrl: "https://gamezipper.com/snake/",
+    embedUrl: "https://gamezipper.com/snake/?utm_source=embed",
     width: 800,
     height: 600,
     featured: true
   },
   {
-    id: "ninja-sword-dash",
-    title: "Ninja: Sword Dash",
-    category: "Action",
-    description: "Dash through challenges in this ninja-themed action game.",
-    art: "🥷",
-    cover: "linear-gradient(135deg,#7560db,#c5b9ff)",
-    image: "assets/ninja-sword-dash.jpg",
-    rating: "4.7",
-    badge: "ACTION",
-    tags: ["Ninja", "Action", "Dash"],
-    officialUrl: "https://gamedistribution.com/",
-    embedId: "2d34067914fd4000a04d7e6a0f86fb9d",
-    width: 1080,
-    height: 1920,
-    featured: true
-  },
-  {
-    id: "ludo-quick",
-    title: "Ludo Quick: Dice Board Games",
-    category: "Casual",
-    description: "Play a quick round of digital Ludo.",
-    art: "🎲",
-    cover: "linear-gradient(135deg,#42c99a,#b8f0c9)",
-    image: "assets/ludo-quick.jpg",
-    rating: "4.8",
-    badge: "BOARD GAME",
-    tags: ["Ludo", "Board", "Dice", "Casual"],
-    officialUrl: "https://gamedistribution.com/",
-    embedId: "75262ef5fe3f44a4ac45006506902f2e",
+    id: "2048",
+    title: "2048",
+    category: "Puzzle",
+    description: "Combine matching number tiles and try to reach 2048.",
+    art: "🔢",
+    cover: "linear-gradient(135deg,#f2b36d,#ffdf9b)",
+    image: "assets/2048.jpg",
+    rating: "New",
+    badge: "BRAIN GAME",
+    tags: ["Puzzle", "Numbers", "Logic", "Brain"],
+    officialUrl: "https://gamezipper.com/2048/",
+    embedUrl: "https://gamezipper.com/2048/?utm_source=embed",
     width: 800,
     height: 600,
     featured: true
   },
-
-  // These entries remain placeholders until real game
-  // links are added to the catalog.
+  {
+    id: "tetris",
+    title: "Tetris",
+    category: "Puzzle",
+    description: "Fit falling blocks together and clear as many lines as possible.",
+    art: "🧩",
+    cover: "linear-gradient(135deg,#6366f1,#b7b9ff)",
+    image: "assets/tetris.jpg",
+    rating: "New",
+    badge: "CLASSIC",
+    tags: ["Puzzle", "Blocks", "Classic", "Strategy"],
+    officialUrl: "https://gamezipper.com/tetris/",
+    embedUrl: "https://gamezipper.com/tetris/?utm_source=embed",
+    width: 800,
+    height: 600,
+    featured: true
+  },
+  {
+    id: "pong",
+    title: "Pong",
+    category: "Arcade",
+    description: "Play a classic paddle game and keep the ball in play.",
+    art: "🏓",
+    cover: "linear-gradient(135deg,#38bdf8,#b2f0ff)",
+    image: "assets/pong.jpg",
+    rating: "New",
+    badge: "RETRO",
+    tags: ["Arcade", "Retro", "Paddle", "Skill"],
+    officialUrl: "https://gamezipper.com/pong/",
+    embedUrl: "https://gamezipper.com/pong/?utm_source=embed",
+    width: 800,
+    height: 600,
+    featured: true
+  },
   {
     id: "tiny-tower",
     title: "Tiny Tower Hop",
@@ -84,12 +81,12 @@ const GAMES = [
     description: "Jump from platform to platform and avoid tricky gaps.",
     art: "🧗",
     cover: "linear-gradient(135deg,#f3a1d0,#ffdaeb)",
-    rating: "4.6",
-    badge: "PLATFORMER",
+    rating: "—",
+    badge: "COMING SOON",
     tags: ["Platformer", "Jump", "Skill"],
     image: "",
     officialUrl: "",
-    embedId: "",
+    embedUrl: "",
     featured: false
   },
   {
@@ -99,12 +96,12 @@ const GAMES = [
     description: "A colourful arcade concept for quick-play sessions.",
     art: "🍉",
     cover: "linear-gradient(135deg,#ff727f,#ffb5a1)",
-    rating: "4.8",
-    badge: "ARCADE",
+    rating: "—",
+    badge: "COMING SOON",
     tags: ["Arcade", "Combo", "Casual"],
     image: "",
     officialUrl: "",
-    embedId: "",
+    embedUrl: "",
     featured: false
   },
   {
@@ -114,12 +111,12 @@ const GAMES = [
     description: "Explore bite-sized brain teasers.",
     art: "🧠",
     cover: "linear-gradient(135deg,#8ca7ff,#c5d6ff)",
-    rating: "4.7",
-    badge: "PUZZLE",
+    rating: "—",
+    badge: "COMING SOON",
     tags: ["Logic", "Brain", "Relax"],
     image: "",
     officialUrl: "",
-    embedId: "",
+    embedUrl: "",
     featured: false
   },
   {
@@ -129,12 +126,12 @@ const GAMES = [
     description: "Aim, time your shot and find the goal.",
     art: "⚽",
     cover: "linear-gradient(135deg,#64d99c,#c4f4a2)",
-    rating: "4.5",
-    badge: "SPORTS",
+    rating: "—",
+    badge: "COMING SOON",
     tags: ["Football", "Timing", "Skill"],
     image: "",
     officialUrl: "",
-    embedId: "",
+    embedUrl: "",
     featured: false
   },
   {
@@ -144,12 +141,12 @@ const GAMES = [
     description: "A space-themed matching game concept.",
     art: "🪐",
     cover: "linear-gradient(135deg,#393c85,#8e83e8)",
-    rating: "4.9",
-    badge: "CASUAL",
+    rating: "—",
+    badge: "COMING SOON",
     tags: ["Space", "Match", "Relax"],
     image: "",
     officialUrl: "",
-    embedId: "",
+    embedUrl: "",
     featured: false
   },
   {
@@ -159,12 +156,12 @@ const GAMES = [
     description: "A cute adventure game concept.",
     art: "🐼",
     cover: "linear-gradient(135deg,#86d9cf,#d5f3bc)",
-    rating: "4.6",
-    badge: "ADVENTURE",
+    rating: "—",
+    badge: "COMING SOON",
     tags: ["Adventure", "Cute", "Explore"],
     image: "",
     officialUrl: "",
-    embedId: "",
+    embedUrl: "",
     featured: false
   },
   {
@@ -174,12 +171,12 @@ const GAMES = [
     description: "A pixel-style action game concept.",
     art: "👾",
     cover: "linear-gradient(135deg,#f3a24d,#ffd37b)",
-    rating: "4.5",
-    badge: "ACTION",
+    rating: "—",
+    badge: "COMING SOON",
     tags: ["Pixel", "Arcade", "Action"],
     image: "",
     officialUrl: "",
-    embedId: "",
+    embedUrl: "",
     featured: false
   },
   {
@@ -189,12 +186,12 @@ const GAMES = [
     description: "A relaxing casual game concept.",
     art: "🌱",
     cover: "linear-gradient(135deg,#69c7a1,#c4efb0)",
-    rating: "4.7",
-    badge: "CASUAL",
+    rating: "—",
+    badge: "COMING SOON",
     tags: ["Relax", "Casual", "Chill"],
     image: "",
     officialUrl: "",
-    embedId: "",
+    embedUrl: "",
     featured: false
   }
 ];
@@ -259,32 +256,7 @@ function safeHttps(url) {
 }
 
 /* =========================================================
-   GAMEDISTRIBUTION EMBED URL
-   Uses the official embedded-game wrapper.
-   ========================================================= */
-
-
-function buildEmbedUrl(game) {
-  const gameUrl =
-    `https://html5.gamedistribution.com/${game.embedId}/`;
-
-  const pageUrl = window.location.href;
-
-  return (
-    "https://embed.gamedistribution.com/" +
-    "?url=" + gameUrl +
-    "&width=" + (game.width || 800) +
-    "&height=" + (game.height || 600) +
-    "&language=en" +
-    "&gdpr-tracking=1" +
-    "&gdpr-targeting=1" +
-    "&gd_sdk_referrer_url=" + encodeURIComponent(pageUrl)
-  );
-}
-
-
-/* =========================================================
-   GAME CARD WITH REAL BANNER IMAGES
+   GAME CARDS WITH BANNER IMAGES
    ========================================================= */
 
 function cardMarkup(game) {
@@ -405,7 +377,7 @@ function renderGames() {
 }
 
 /* =========================================================
-   FEATURED GAME BANNERS
+   FEATURED GAMES WITH BANNER IMAGES
    ========================================================= */
 
 function renderFeatured() {
@@ -507,13 +479,12 @@ function updateGameUrl(gameId, replace = false) {
       history.pushState({}, "", url);
     }
   } catch (error) {
-    // File-based local previews may restrict URL changes.
     console.warn("Could not update game URL:", error);
   }
 }
 
 /* =========================================================
-   GAME PLAYER
+   GAME PLAYER — GAMEZIPPER DIRECT EMBED
    ========================================================= */
 
 function openGame(id, options = {}) {
@@ -540,9 +511,7 @@ function openGame(id, options = {}) {
     game.description;
 
   $("gameTags").innerHTML = game.tags
-    .map(tag =>
-      `<span class="tag">${escapeHTML(tag)}</span>`
-    )
+    .map(tag => `<span class="tag">${escapeHTML(tag)}</span>`)
     .join("");
 
   $("favoriteToggle").classList.toggle(
@@ -555,22 +524,26 @@ function openGame(id, options = {}) {
 
   const wrap = $("gameFrameWrap");
 
-  // Remove the previously active game.
+  // Remove the previously opened game.
   wrap.querySelector("iframe")?.remove();
 
   const placeholder = $("gameFramePlaceholder");
 
-  if (game.embedId) {
+  if (game.embedUrl && safeHttps(game.embedUrl)) {
     placeholder.classList.add("hidden");
 
     const iframe = document.createElement("iframe");
 
-    iframe.src = buildEmbedUrl(game);
+    // Use the exact official embed URL supplied by GameZipper.
+    iframe.src = game.embedUrl;
     iframe.title = game.title;
     iframe.loading = "eager";
-    iframe.allow = "fullscreen; gamepad; autoplay";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "none";
+    iframe.scrolling = "no";
+    iframe.allow = "autoplay; fullscreen; gamepad";
     iframe.allowFullscreen = true;
-    iframe.referrerPolicy = "strict-origin-when-cross-origin";
 
     wrap.appendChild(iframe);
   } else {
@@ -865,9 +838,7 @@ const initialGame =
   new URLSearchParams(window.location.search).get("game");
 
 if (initialGame && GAMES.some(game => game.id === initialGame)) {
-  openGame(initialGame, {
-    fromHistory: true
-  });
+  openGame(initialGame, { fromHistory: true });
 }
 
 /* =========================================================
