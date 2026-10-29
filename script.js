@@ -1,9 +1,8 @@
 
 /* =========================================================
-   ARCADE POP — UPDATED GAME CATALOG
-   13 supplied Gamezop games
-   Preserves search, categories, favorites, navigation,
-   featured games, fullscreen, sharing URLs and ad slots.
+   ARCADE POP — COMPLETE GAME SCRIPT
+   13 Gamezop games + preserved website functionality
+   HTML + CSS + Vanilla JavaScript
    ========================================================= */
 
 const GAMES = [
@@ -26,7 +25,7 @@ const GAMES = [
     id: "assassins-hunt-wild-west",
     title: "Assassin's Hunt: Wild West",
     category: "Action",
-    description: "Step into the Wild West for the showdown. Unlock sharp skins and explore 50+ levels.",
+    description: "Step into the Wild West for the showdown’s begun; take down your foes with blade and with fun! Unlock sharp skins, let your legend ignite, with 50+ levels, adventure takes flight.",
     art: "🤠",
     cover: "linear-gradient(135deg,#8d512d,#e4b15b)",
     image: "",
@@ -41,7 +40,7 @@ const GAMES = [
     id: "triple-tile-match-master",
     title: "Triple Tile Match Master",
     category: "Puzzle & Logic",
-    description: "Tap three, clear the board, and use power-ups to boost your score.",
+    description: "Tap three, clear the board. Use power-ups to boost your score. Every move unlocks more.",
     art: "🧩",
     cover: "linear-gradient(135deg,#3868ad,#77d7dc)",
     image: "",
@@ -56,7 +55,7 @@ const GAMES = [
     id: "cyberfusion",
     title: "Cyberfusion",
     category: "Puzzle & Logic",
-    description: "Merge numbers to make higher numbers and blast stars with powerful matches.",
+    description: "Numbers merge to make higher numbers, stars blast when merged. The best match-3 HTML5 game!",
     art: "🔢",
     cover: "linear-gradient(135deg,#392b72,#e44cc2)",
     image: "",
@@ -71,7 +70,7 @@ const GAMES = [
     id: "chess-grandmaster",
     title: "Chess Grandmaster",
     category: "Strategy",
-    description: "Play chess at three difficulty levels or solve over 1100 chess challenges.",
+    description: "A chess game for everyone: from beginners to experts! Choose between 3 difficulty modes, or solve over 1100 challenges.",
     art: "♟️",
     cover: "linear-gradient(135deg,#35433e,#9ab69c)",
     image: "",
@@ -86,7 +85,7 @@ const GAMES = [
     id: "bubble-shooter-classic",
     title: "Bubble Shooter Classic",
     category: "Strategy",
-    description: "Match colorful bubbles, make them pop, and score points as they fall.",
+    description: "Match the colors, make them pop, burst the bubbles and watch them drop! The more bubbles that fall, the more points you get.",
     art: "🫧",
     cover: "linear-gradient(135deg,#277ec3,#f07ac7)",
     image: "",
@@ -101,7 +100,7 @@ const GAMES = [
     id: "fruity-fiesta",
     title: "Fruity Fiesta",
     category: "Arcade",
-    description: "Merge juicy fruits, discover melons, and become the fruit baron.",
+    description: "It's time for a juicy, jivy Fiesta of Fruits. Merge the fruits to get the elusive Melons. Collect them all to become the fruit baron!",
     art: "🍉",
     cover: "linear-gradient(135deg,#df4e62,#ffbd59)",
     image: "",
@@ -131,7 +130,7 @@ const GAMES = [
     id: "sudoku-classic",
     title: "Sudoku Classic",
     category: "Puzzle & Logic",
-    description: "Complete the 9×9 Sudoku grid using numbers from 1 to 9.",
+    description: "Fill a 9×9 grid so each row, column and 3×3 section contains the digits from 1 to 9.",
     art: "🔢",
     cover: "linear-gradient(135deg,#2e6ba5,#7fc8ed)",
     image: "",
@@ -146,7 +145,7 @@ const GAMES = [
     id: "merge-mania",
     title: "Merge Mania",
     category: "Strategy",
-    description: "Pit numbers against one another in a race against time.",
+    description: "Zap those numbers by pitting them against one another! Race against time and see how much you score.",
     art: "💥",
     cover: "linear-gradient(135deg,#7648c8,#f49b4a)",
     image: "",
@@ -161,7 +160,7 @@ const GAMES = [
     id: "quad-colors",
     title: "QUAD Colors",
     category: "Strategy",
-    description: "Skip, reverse, draw, and go wild to get rid of your last card.",
+    description: "Skip, Reverse, Draw and go Wild to get rid of your last card. Don't wait to jab QUAD!",
     art: "🎴",
     cover: "linear-gradient(135deg,#e34e4e,#5651c9)",
     image: "",
@@ -176,7 +175,7 @@ const GAMES = [
     id: "ludo-with-friends",
     title: "Ludo With Friends",
     category: "Strategy",
-    description: "Play multiplayer Ludo with friends or players around the world.",
+    description: "Here's the best multiplayer Ludo game! Play with your friends or with thousands of other players online.",
     art: "🎲",
     cover: "linear-gradient(135deg,#198a72,#f1bd46)",
     image: "",
@@ -191,7 +190,7 @@ const GAMES = [
     id: "blocks-adventure-jungle-saga",
     title: "Blocks Adventure Jungle Saga",
     category: "Strategy",
-    description: "Drag and drop blocks in a vibrant jungle adventure and stack up points.",
+    description: "In jungle lands where wild vines grow, drag and drop blocks in a vibrant flow. Match them right and stack up points.",
     art: "🌴",
     cover: "linear-gradient(135deg,#286d4e,#a6c84d)",
     image: "",
@@ -241,12 +240,14 @@ function escapeHTML(value) {
 
 function showToast(message) {
   const toast = $("toast");
+
   if (!toast) return;
 
   toast.textContent = message;
   toast.classList.add("show");
 
   clearTimeout(showToast.timer);
+
   showToast.timer = setTimeout(() => {
     toast.classList.remove("show");
   }, 2400);
@@ -288,8 +289,16 @@ function cardMarkup(game) {
         style="--cover:${game.cover}"
       >
         ${banner}
-        <span class="game-art" aria-hidden="true">${game.art}</span>
-        <button class="game-play" tabindex="-1" aria-hidden="true">▶</button>
+
+        <span class="game-art" aria-hidden="true">
+          ${game.art}
+        </span>
+
+        <button
+          class="game-play"
+          tabindex="-1"
+          aria-hidden="true"
+        >▶</button>
       </div>
 
       <div class="game-meta">
@@ -309,11 +318,13 @@ function cardMarkup(game) {
 
 function renderCategories() {
   const categoryStrip = $("categoryStrip");
+
   if (!categoryStrip) return;
 
   categoryStrip.innerHTML = CATEGORIES.map(category => `
     <button
-      class="category-chip ${state.category === category.name ? "active" : ""}"
+      class="category-chip ${state.category === category.name ? "active" : ""
+    }"
       data-category="${category.name}"
     >
       <span>${category.icon}</span>
@@ -337,17 +348,21 @@ function matches(game) {
   ].join(" ").toLowerCase();
 
   return (
-    (state.category === "All" || game.category === state.category) &&
+    (state.category === "All" ||
+      game.category === state.category) &&
     (!query || text.includes(query)) &&
-    (!state.favoritesOnly || state.favorites.has(game.id))
+    (!state.favoritesOnly ||
+      state.favorites.has(game.id))
   );
 }
 
 function renderGames() {
   const gameGrid = $("gameGrid");
+
   if (!gameGrid) return;
 
   const list = GAMES.filter(matches);
+
   gameGrid.innerHTML = list.map(cardMarkup).join("");
 
   if ($("resultCount")) {
@@ -356,7 +371,10 @@ function renderGames() {
   }
 
   if ($("emptyState")) {
-    $("emptyState").classList.toggle("hidden", list.length !== 0);
+    $("emptyState").classList.toggle(
+      "hidden",
+      list.length !== 0
+    );
   }
 
   gameGrid.classList.toggle("hidden", list.length === 0);
@@ -381,11 +399,12 @@ function renderGames() {
 }
 
 /* =========================================================
-   FEATURED GAMES
+   FEATURED GAME
    ========================================================= */
 
 function renderFeatured() {
   const featuredGrid = $("featuredGrid");
+
   if (!featuredGrid) return;
 
   featuredGrid.innerHTML = GAMES
@@ -399,23 +418,27 @@ function renderFeatured() {
       >
         ${game.image
         ? `<img
-              class="feature-banner-image"
-              src="${escapeHTML(game.image)}"
-              alt="${escapeHTML(game.title)}"
-              loading="lazy"
-              onerror="this.remove();this.parentElement.classList.remove('has-image')"
-            >`
+                class="feature-banner-image"
+                src="${escapeHTML(game.image)}"
+                alt="${escapeHTML(game.title)}"
+                loading="lazy"
+                onerror="this.remove();this.parentElement.classList.remove('has-image')"
+              >`
         : ""
       }
 
         <div class="feature-top">
-          <span class="feature-badge">${escapeHTML(game.badge)}</span>
+          <span class="feature-badge">
+            ${escapeHTML(game.badge)}
+          </span>
           <span class="play-circle">▶</span>
         </div>
 
         <div class="feature-info">
           <h3>${escapeHTML(game.title)}</h3>
-          <p>${escapeHTML(game.category)} · ★ ${escapeHTML(game.rating)}</p>
+          <p>
+            ${escapeHTML(game.category)} · ★ ${escapeHTML(game.rating)}
+          </p>
         </div>
       </button>
     `).join("");
@@ -427,22 +450,31 @@ function renderFeatured() {
 
 function renderRelated(current) {
   const container = $("relatedGames");
+
   if (!container) return;
 
-  const relatedGames = GAMES.filter(game => game.id !== current.id);
+  const relatedGames = GAMES.filter(
+    game => game.id !== current.id
+  );
 
   if (relatedGames.length === 0) {
     container.innerHTML = `
       <p style="font-size:12px;line-height:1.6;color:#777b99;margin:4px 0;">
-        More games will appear here as you add them.
+        More games will appear here as you add their official links.
       </p>
     `;
     return;
   }
 
   container.innerHTML = relatedGames.map(game => `
-    <button class="related-item" data-game="${escapeHTML(game.id)}">
-      <span class="related-art" style="--cover:${game.cover}">
+    <button
+      class="related-item"
+      data-game="${escapeHTML(game.id)}"
+    >
+      <span
+        class="related-art"
+        style="--cover:${game.cover}"
+      >
         ${game.image
       ? `<img
               class="related-banner-image"
@@ -454,9 +486,12 @@ function renderRelated(current) {
       : game.art
     }
       </span>
+
       <span>
         <strong>${escapeHTML(game.title)}</strong>
-        <small>${escapeHTML(game.category)} · ★ ${escapeHTML(game.rating)}</small>
+        <small>
+          ${escapeHTML(game.category)} · ★ ${escapeHTML(game.rating)}
+        </small>
       </span>
     </button>
   `).join("");
@@ -492,6 +527,7 @@ function updateGameUrl(gameId, replace = false) {
 
 function openGame(id, options = {}) {
   const game = GAMES.find(item => item.id === id);
+
   if (!game || !homeView || !playerView) return;
 
   state.currentGame = game;
@@ -504,13 +540,10 @@ function openGame(id, options = {}) {
   homeView.classList.add("hidden");
   playerView.classList.remove("hidden");
 
-  if ($("playerTitle")) $("playerTitle").textContent = game.title;
-  if ($("playerCategory")) {
-    $("playerCategory").textContent = game.category.toUpperCase();
-  }
-  if ($("playerDescription")) {
-    $("playerDescription").textContent = game.description;
-  }
+  $("playerTitle").textContent = game.title;
+  $("playerCategory").textContent = game.category.toUpperCase();
+  $("playerDescription").textContent = game.description;
+
   if ($("aboutDescription")) {
     $("aboutDescription").textContent = game.description;
   }
@@ -526,18 +559,23 @@ function openGame(id, options = {}) {
       "active",
       state.favorites.has(game.id)
     );
+
     $("favoriteToggle").textContent =
       state.favorites.has(game.id) ? "♥" : "♡";
   }
 
   const wrap = $("gameFrameWrap");
   const placeholder = $("gameFramePlaceholder");
+
   if (!wrap || !placeholder) return;
 
+  // Support either an iframe already included in index.html
+  // or the original placeholder-based player structure.
   let iframe = $("gamePlayerIframe");
 
   if (!iframe) {
     wrap.querySelectorAll("iframe").forEach(frame => frame.remove());
+
     iframe = document.createElement("iframe");
     iframe.id = "gamePlayerIframe";
     wrap.appendChild(iframe);
@@ -547,9 +585,14 @@ function openGame(id, options = {}) {
     iframe.title = game.title;
     iframe.setAttribute("seamless", "seamless");
     iframe.setAttribute("allowtransparency", "true");
+    iframe.setAttribute("allowfullscreen", "true");
     iframe.setAttribute("frameborder", "0");
     iframe.setAttribute("scrolling", "no");
-    iframe.setAttribute("allow", "autoplay; fullscreen; gamepad");
+    iframe.setAttribute(
+      "allow",
+      "autoplay; fullscreen; gamepad"
+    );
+
     iframe.allowFullscreen = true;
     iframe.loading = "eager";
 
@@ -558,9 +601,8 @@ function openGame(id, options = {}) {
     iframe.style.border = "0";
     iframe.style.display = "block";
 
-    if (iframe.src !== game.embedUrl) {
-      iframe.src = game.embedUrl;
-    }
+    // Use the exact Gamezop URL supplied by you.
+    iframe.src = game.embedUrl;
 
     placeholder.classList.add("hidden");
   } else {
@@ -582,7 +624,10 @@ function openGame(id, options = {}) {
 
   renderRelated(game);
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 /* =========================================================
@@ -599,7 +644,10 @@ function goHome(options = {}) {
     updateGameUrl(null, options.replaceHistory || false);
   }
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 /* =========================================================
@@ -622,6 +670,7 @@ function toggleFavorite() {
       "active",
       state.favorites.has(id)
     );
+
     $("favoriteToggle").textContent =
       state.favorites.has(id) ? "♥" : "♡";
   }
@@ -757,7 +806,10 @@ if ($("backBtn")) {
 }
 
 if ($("favoriteToggle")) {
-  $("favoriteToggle").addEventListener("click", toggleFavorite);
+  $("favoriteToggle").addEventListener(
+    "click",
+    toggleFavorite
+  );
 }
 
 if ($("favoritesBtn")) {
@@ -766,7 +818,9 @@ if ($("favoritesBtn")) {
     state.category = "All";
     state.query = "";
 
-    if ($("searchInput")) $("searchInput").value = "";
+    if ($("searchInput")) {
+      $("searchInput").value = "";
+    }
 
     $("favoritesBtn").classList.toggle(
       "active",
@@ -782,7 +836,10 @@ if ($("favoritesBtn")) {
       });
     }
 
-    if (state.favoritesOnly && state.favorites.size === 0) {
+    if (
+      state.favoritesOnly &&
+      state.favorites.size === 0
+    ) {
       showToast("Tap the heart on a game to save it");
     }
   });
@@ -808,7 +865,9 @@ document.querySelectorAll(".text-btn").forEach(button => {
     resetFilters();
 
     if ($("gamesSection")) {
-      $("gamesSection").scrollIntoView({ behavior: "smooth" });
+      $("gamesSection").scrollIntoView({
+        behavior: "smooth"
+      });
     }
   });
 });
@@ -888,6 +947,8 @@ if ($("year")) {
 renderFeatured();
 renderGames();
 
+/* Open the selected game directly from a shareable URL. */
+
 const initialGame =
   new URLSearchParams(window.location.search).get("game");
 
@@ -896,8 +957,21 @@ if (initialGame && GAMES.some(game => game.id === initialGame)) {
 }
 
 /* =========================================================
-   ADSTERRA
+   ADSTERRA SETUP
 
-   Existing advertising scripts and ad slots in index.html
-   are preserved. Keep your approved ad snippets there.
+   Your existing ad scripts in index.html remain unchanged.
+   The following are optional placeholders if you later wish
+   to insert a separate approved banner code in these slots.
    ========================================================= */
+
+// Top banner example:
+// $("topAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
+// $("topAdPlaceholder").classList.add("hidden");
+
+// Bottom banner example:
+// $("bottomAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
+// $("bottomAdPlaceholder").classList.add("hidden");
+
+// Game-player banner example:
+// $("playerAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
+// $("playerAdPlaceholder").classList.add("hidden");
