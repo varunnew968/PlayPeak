@@ -1,15 +1,16 @@
 
-/* Arcade Pop — complete game catalog and player behavior.
-   Game banners are stored in the local assets/ folder.
-   Add your approved Adsterra code in the ad slots at the bottom.
-*/
+/* =========================================================
+   ARCADE POP — COMPLETE GAME SCRIPT
+   HTML + CSS + Vanilla JavaScript
+   GameDistribution embeds + local game banners
+   ========================================================= */
 
 const GAMES = [
   {
     id: "hyper-cars-stunt-racing",
     title: "Hyper Cars Stunt Racing",
     category: "Racing",
-    description: "Drive supercars, perform stunts, and explore a 3D racing world.",
+    description: "Drive supercars, perform stunts and race through 3D tracks.",
     art: "🏎️",
     cover: "linear-gradient(135deg,#ff9b38,#ffdf64)",
     image: "assets/hyper-cars.jpg",
@@ -17,7 +18,9 @@ const GAMES = [
     badge: "TRENDING",
     tags: ["Racing", "Cars", "Stunts", "Driving"],
     officialUrl: "https://gamedistribution.com/",
-    embedUrl: "https://html5.gamedistribution.com/93407da92fe043e7b4b70fcc919ed8a4/?gd_sdk_referrer_url=https://playpeak.gamer.gd/",
+    embedId: "93407da92fe043e7b4b70fcc919ed8a4",
+    width: 960,
+    height: 600,
     featured: true
   },
   {
@@ -32,7 +35,9 @@ const GAMES = [
     badge: "ARCADE",
     tags: ["Arcade", "Action", "Quick play"],
     officialUrl: "https://gamedistribution.com/",
-    embedUrl: "https://html5.gamedistribution.com/f7be9dcb47e848178d99bffcaa396c68/?gd_sdk_referrer_url=https://playpeak.gamer.gd/",
+    embedId: "f7be9dcb47e848178d99bffcaa396c68",
+    width: 800,
+    height: 600,
     featured: true
   },
   {
@@ -47,7 +52,9 @@ const GAMES = [
     badge: "ACTION",
     tags: ["Ninja", "Action", "Dash"],
     officialUrl: "https://gamedistribution.com/",
-    embedUrl: "https://html5.gamedistribution.com/2d34067914fd4000a04d7e6a0f86fb9d/?gd_sdk_referrer_url=https://playpeak.gamer.gd/",
+    embedId: "2d34067914fd4000a04d7e6a0f86fb9d",
+    width: 1080,
+    height: 1920,
     featured: true
   },
   {
@@ -62,9 +69,14 @@ const GAMES = [
     badge: "BOARD GAME",
     tags: ["Ludo", "Board", "Dice", "Casual"],
     officialUrl: "https://gamedistribution.com/",
-    embedUrl: "https://html5.gamedistribution.com/75262ef5fe3f44a4ac45006506902f2e/?gd_sdk_referrer_url=https://playpeak.gamer.gd/",
-    featured: false
+    embedId: "75262ef5fe3f44a4ac45006506902f2e",
+    width: 800,
+    height: 600,
+    featured: true
   },
+
+  // These entries remain placeholders until real game
+  // links are added to the catalog.
   {
     id: "tiny-tower",
     title: "Tiny Tower Hop",
@@ -75,8 +87,9 @@ const GAMES = [
     rating: "4.6",
     badge: "PLATFORMER",
     tags: ["Platformer", "Jump", "Skill"],
+    image: "",
     officialUrl: "",
-    embedUrl: "",
+    embedId: "",
     featured: false
   },
   {
@@ -89,8 +102,9 @@ const GAMES = [
     rating: "4.8",
     badge: "ARCADE",
     tags: ["Arcade", "Combo", "Casual"],
+    image: "",
     officialUrl: "",
-    embedUrl: "",
+    embedId: "",
     featured: false
   },
   {
@@ -103,22 +117,24 @@ const GAMES = [
     rating: "4.7",
     badge: "PUZZLE",
     tags: ["Logic", "Brain", "Relax"],
+    image: "",
     officialUrl: "",
-    embedUrl: "",
+    embedId: "",
     featured: false
   },
   {
     id: "goal-rush",
     title: "Goal Rush",
     category: "Sports",
-    description: "Aim, time your shot, and find the goal.",
+    description: "Aim, time your shot and find the goal.",
     art: "⚽",
     cover: "linear-gradient(135deg,#64d99c,#c4f4a2)",
     rating: "4.5",
     badge: "SPORTS",
     tags: ["Football", "Timing", "Skill"],
+    image: "",
     officialUrl: "",
-    embedUrl: "",
+    embedId: "",
     featured: false
   },
   {
@@ -131,8 +147,9 @@ const GAMES = [
     rating: "4.9",
     badge: "CASUAL",
     tags: ["Space", "Match", "Relax"],
+    image: "",
     officialUrl: "",
-    embedUrl: "",
+    embedId: "",
     featured: false
   },
   {
@@ -145,8 +162,9 @@ const GAMES = [
     rating: "4.6",
     badge: "ADVENTURE",
     tags: ["Adventure", "Cute", "Explore"],
+    image: "",
     officialUrl: "",
-    embedUrl: "",
+    embedId: "",
     featured: false
   },
   {
@@ -159,8 +177,9 @@ const GAMES = [
     rating: "4.5",
     badge: "ACTION",
     tags: ["Pixel", "Arcade", "Action"],
+    image: "",
     officialUrl: "",
-    embedUrl: "",
+    embedId: "",
     featured: false
   },
   {
@@ -173,8 +192,9 @@ const GAMES = [
     rating: "4.7",
     badge: "CASUAL",
     tags: ["Relax", "Casual", "Chill"],
+    image: "",
     officialUrl: "",
-    embedUrl: "",
+    embedId: "",
     featured: false
   }
 ];
@@ -204,6 +224,20 @@ const $ = id => document.getElementById(id);
 const homeView = $("homeView");
 const playerView = $("playerView");
 
+/* =========================================================
+   HELPERS
+   ========================================================= */
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[character]));
+}
+
 function showToast(message) {
   const toast = $("toast");
   toast.textContent = message;
@@ -216,27 +250,53 @@ function showToast(message) {
   }, 2400);
 }
 
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, character => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  }[character]));
+function safeHttps(url) {
+  try {
+    return new URL(url).protocol === "https:";
+  } catch {
+    return false;
+  }
 }
 
-/* GAME CARDS WITH BANNER IMAGES */
+/* =========================================================
+   GAMEDISTRIBUTION EMBED URL
+   Uses the official embedded-game wrapper.
+   ========================================================= */
+
+function buildEmbedUrl(game) {
+  const gameUrl =
+    `https://html5.gamedistribution.com/${game.embedId}/`;
+
+  // Use the current page URL as the game's referrer.
+  // Game links will use ?game=game-id so every game can
+  // have its own shareable page URL.
+  const pageUrl = window.location.href;
+
+  return (
+    "https://embed.gamedistribution.com/" +
+    "?url=" + gameUrl +
+    "&width=" + (game.width || 800) +
+    "&height=" + (game.height || 600) +
+    "&language=en" +
+    "&gdpr-tracking=1" +
+    "&gdpr-targeting=1" +
+    "&gd_sdk_referrer_url=" + encodeURIComponent(pageUrl)
+  );
+}
+
+/* =========================================================
+   GAME CARD WITH REAL BANNER IMAGES
+   ========================================================= */
 
 function cardMarkup(game) {
   const banner = game.image
     ? `<img
-        class="game-banner-image"
-        src="${escapeHTML(game.image)}"
-        alt="${escapeHTML(game.title)}"
-        loading="lazy"
-        onerror="this.remove(); this.parentElement.classList.remove('has-banner')"
-      >`
+         class="game-banner-image"
+         src="${escapeHTML(game.image)}"
+         alt="${escapeHTML(game.title)}"
+         loading="lazy"
+         onerror="this.remove();this.parentElement.classList.remove('has-banner')"
+       >`
     : "";
 
   return `
@@ -275,12 +335,15 @@ function cardMarkup(game) {
   `;
 }
 
-/* CATEGORIES */
+/* =========================================================
+   CATEGORY FILTERS
+   ========================================================= */
 
 function renderCategories() {
   $("categoryStrip").innerHTML = CATEGORIES.map(category => `
     <button
-      class="category-chip ${state.category === category.name ? "active" : ""}"
+      class="category-chip ${state.category === category.name ? "active" : ""
+    }"
       data-category="${category.name}"
     >
       <span>${category.icon}</span>
@@ -288,8 +351,6 @@ function renderCategories() {
     </button>
   `).join("");
 }
-
-/* SEARCH AND FILTERS */
 
 function matches(game) {
   const query = state.query.toLowerCase().trim();
@@ -302,22 +363,32 @@ function matches(game) {
   ].join(" ").toLowerCase();
 
   return (
-    (state.category === "All" || game.category === state.category) &&
+    (state.category === "All" ||
+      game.category === state.category) &&
     (!query || text.includes(query)) &&
-    (!state.favoritesOnly || state.favorites.has(game.id))
+    (!state.favoritesOnly ||
+      state.favorites.has(game.id))
   );
 }
 
 function renderGames() {
   const list = GAMES.filter(matches);
 
-  $("gameGrid").innerHTML = list.map(cardMarkup).join("");
+  $("gameGrid").innerHTML =
+    list.map(cardMarkup).join("");
 
   $("resultCount").textContent =
     `${list.length} game${list.length === 1 ? "" : "s"}`;
 
-  $("emptyState").classList.toggle("hidden", list.length !== 0);
-  $("gameGrid").classList.toggle("hidden", list.length === 0);
+  $("emptyState").classList.toggle(
+    "hidden",
+    list.length !== 0
+  );
+
+  $("gameGrid").classList.toggle(
+    "hidden",
+    list.length === 0
+  );
 
   $("catalogTitle").textContent = state.favoritesOnly
     ? "Your favourites"
@@ -334,7 +405,9 @@ function renderGames() {
   renderCategories();
 }
 
-/* FEATURED CARDS WITH BANNERS */
+/* =========================================================
+   FEATURED GAME BANNERS
+   ========================================================= */
 
 function renderFeatured() {
   $("featuredGrid").innerHTML = GAMES
@@ -348,12 +421,12 @@ function renderFeatured() {
       >
         ${game.image
         ? `<img
-                class="feature-banner-image"
-                src="${escapeHTML(game.image)}"
-                alt="${escapeHTML(game.title)}"
-                loading="lazy"
-                onerror="this.remove(); this.parentElement.classList.remove('has-image')"
-              >`
+                 class="feature-banner-image"
+                 src="${escapeHTML(game.image)}"
+                 alt="${escapeHTML(game.title)}"
+                 loading="lazy"
+                 onerror="this.remove();this.parentElement.classList.remove('has-image')"
+               >`
         : ""
       }
 
@@ -371,10 +444,13 @@ function renderFeatured() {
           </p>
         </div>
       </button>
-    `).join("");
+    `)
+    .join("");
 }
 
-/* RELATED GAMES WITH BANNERS */
+/* =========================================================
+   RELATED GAMES WITH THUMBNAILS
+   ========================================================= */
 
 function renderRelated(current) {
   $("relatedGames").innerHTML = GAMES
@@ -391,12 +467,12 @@ function renderRelated(current) {
         >
           ${game.image
         ? `<img
-                  class="related-banner-image"
-                  src="${escapeHTML(game.image)}"
-                  alt="${escapeHTML(game.title)}"
-                  loading="lazy"
-                  onerror="this.remove()"
-                >`
+                   class="related-banner-image"
+                   src="${escapeHTML(game.image)}"
+                   alt="${escapeHTML(game.title)}"
+                   loading="lazy"
+                   onerror="this.remove()"
+                 >`
         : game.art
       }
         </span>
@@ -408,20 +484,40 @@ function renderRelated(current) {
           </small>
         </span>
       </button>
-    `).join("");
+    `)
+    .join("");
 }
 
-/* GAME PLAYER */
+/* =========================================================
+   SHAREABLE GAME URL
+   ========================================================= */
 
-function safeHttps(url) {
+function updateGameUrl(gameId, replace = false) {
   try {
-    return new URL(url).protocol === "https:";
-  } catch {
-    return false;
+    const url = new URL(window.location.href);
+
+    if (gameId) {
+      url.searchParams.set("game", gameId);
+    } else {
+      url.searchParams.delete("game");
+    }
+
+    if (replace) {
+      history.replaceState({}, "", url);
+    } else {
+      history.pushState({}, "", url);
+    }
+  } catch (error) {
+    // File-based local previews may restrict URL changes.
+    console.warn("Could not update game URL:", error);
   }
 }
 
-function openGame(id) {
+/* =========================================================
+   GAME PLAYER
+   ========================================================= */
+
+function openGame(id, options = {}) {
   const game = GAMES.find(item => item.id === id);
 
   if (!game) return;
@@ -429,17 +525,25 @@ function openGame(id) {
   state.currentGame = game;
   state.favoritesOnly = false;
 
+  if (!options.fromHistory) {
+    updateGameUrl(game.id, options.replaceHistory || false);
+  }
+
   homeView.classList.add("hidden");
   playerView.classList.remove("hidden");
 
   $("playerTitle").textContent = game.title;
-  $("playerCategory").textContent = game.category.toUpperCase();
-  $("playerDescription").textContent = game.description;
-
-  $("aboutDescription").textContent = game.description;
+  $("playerCategory").textContent =
+    game.category.toUpperCase();
+  $("playerDescription").textContent =
+    game.description;
+  $("aboutDescription").textContent =
+    game.description;
 
   $("gameTags").innerHTML = game.tags
-    .map(tag => `<span class="tag">${escapeHTML(tag)}</span>`)
+    .map(tag =>
+      `<span class="tag">${escapeHTML(tag)}</span>`
+    )
     .join("");
 
   $("favoriteToggle").classList.toggle(
@@ -452,19 +556,19 @@ function openGame(id) {
 
   const wrap = $("gameFrameWrap");
 
-  // Remove any previously opened game iframe.
+  // Remove the previously active game.
   wrap.querySelector("iframe")?.remove();
 
   const placeholder = $("gameFramePlaceholder");
 
-  if (game.embedUrl && safeHttps(game.embedUrl)) {
+  if (game.embedId) {
     placeholder.classList.add("hidden");
 
     const iframe = document.createElement("iframe");
 
-    iframe.src = game.embedUrl;
+    iframe.src = buildEmbedUrl(game);
     iframe.title = game.title;
-    iframe.loading = "lazy";
+    iframe.loading = "eager";
     iframe.allow = "fullscreen; gamepad; autoplay";
     iframe.allowFullscreen = true;
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
@@ -492,11 +596,15 @@ function openGame(id) {
   });
 }
 
-function goHome() {
+function goHome(options = {}) {
   playerView.classList.add("hidden");
   homeView.classList.remove("hidden");
 
   state.currentGame = null;
+
+  if (!options.fromHistory) {
+    updateGameUrl(null, options.replaceHistory || false);
+  }
 
   window.scrollTo({
     top: 0,
@@ -504,7 +612,9 @@ function goHome() {
   });
 }
 
-/* FAVORITES */
+/* =========================================================
+   FAVORITES
+   ========================================================= */
 
 function toggleFavorite() {
   if (!state.currentGame) return;
@@ -532,8 +642,6 @@ function toggleFavorite() {
   );
 }
 
-/* RESET FILTERS */
-
 function resetFilters() {
   state.category = "All";
   state.query = "";
@@ -545,7 +653,9 @@ function resetFilters() {
   renderGames();
 }
 
-/* GAME CARD AND CATEGORY EVENTS */
+/* =========================================================
+   CLICK AND KEYBOARD EVENTS
+   ========================================================= */
 
 document.addEventListener("click", event => {
   const gameTarget = event.target.closest("[data-game]");
@@ -555,7 +665,8 @@ document.addEventListener("click", event => {
     return;
   }
 
-  const categoryTarget = event.target.closest("[data-category]");
+  const categoryTarget =
+    event.target.closest("[data-category]");
 
   if (categoryTarget) {
     state.category = categoryTarget.dataset.category;
@@ -589,7 +700,9 @@ document.addEventListener("keydown", event => {
   }
 });
 
-/* SEARCH */
+/* =========================================================
+   SEARCH
+   ========================================================= */
 
 $("searchForm").addEventListener("submit", event => {
   event.preventDefault();
@@ -616,7 +729,9 @@ $("searchInput").addEventListener("input", event => {
   renderGames();
 });
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 $("homeBtn").addEventListener("click", () => {
   goHome();
@@ -624,7 +739,11 @@ $("homeBtn").addEventListener("click", () => {
 });
 
 $("backBtn").addEventListener("click", goHome);
-$("favoriteToggle").addEventListener("click", toggleFavorite);
+
+$("favoriteToggle").addEventListener(
+  "click",
+  toggleFavorite
+);
 
 $("favoritesBtn").addEventListener("click", () => {
   state.favoritesOnly = !state.favoritesOnly;
@@ -660,7 +779,10 @@ $("exploreBtn").addEventListener("click", () => {
   });
 });
 
-$("resetFilters").addEventListener("click", resetFilters);
+$("resetFilters").addEventListener(
+  "click",
+  resetFilters
+);
 
 document.querySelectorAll(".text-btn").forEach(button => {
   button.addEventListener("click", () => {
@@ -672,23 +794,32 @@ document.querySelectorAll(".text-btn").forEach(button => {
   });
 });
 
-/* FULLSCREEN */
+/* =========================================================
+   FULLSCREEN
+   ========================================================= */
 
-$("fullscreenBtn").addEventListener("click", async () => {
-  const frame = $("gameFrameWrap");
+$("fullscreenBtn").addEventListener(
+  "click",
+  async () => {
+    const frame = $("gameFrameWrap");
 
-  try {
-    if (!document.fullscreenElement) {
-      await frame.requestFullscreen();
-    } else {
-      await document.exitFullscreen();
+    try {
+      if (!document.fullscreenElement) {
+        await frame.requestFullscreen();
+      } else {
+        await document.exitFullscreen();
+      }
+    } catch {
+      showToast(
+        "Fullscreen isn't available in this browser"
+      );
     }
-  } catch {
-    showToast("Fullscreen isn't available in this browser");
   }
-});
+);
 
-/* FOOTER LINKS */
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
 
 $("privacyLink").addEventListener("click", event => {
   event.preventDefault();
@@ -705,7 +836,22 @@ $("licensingLink").addEventListener("click", event => {
   showToast("Add game credits and license details for each game.");
 });
 
-/* COPYRIGHT YEAR */
+/* =========================================================
+   BACK/FORWARD AND DIRECT GAME LINKS
+   ========================================================= */
+
+window.addEventListener("popstate", () => {
+  const gameId =
+    new URLSearchParams(window.location.search).get("game");
+
+  if (gameId && GAMES.some(game => game.id === gameId)) {
+    openGame(gameId, { fromHistory: true });
+  } else {
+    goHome({ fromHistory: true });
+  }
+});
+
+/* COPYRIGHT */
 
 $("year").textContent = new Date().getFullYear();
 
@@ -714,22 +860,33 @@ $("year").textContent = new Date().getFullYear();
 renderFeatured();
 renderGames();
 
-/* ADSTERRA SETUP
-   1. Add/approve your website in Adsterra.
-   2. Create a banner or native banner ad unit.
-   3. Paste its exact approved code into the matching ad slot.
-   4. Hide the placeholder after adding the real code.
-   Never place ads over game controls or disguise ads as game buttons.
-*/
+/* Open a game directly when its URL contains ?game=game-id */
 
-// Example for approved banner code:
-// $("topAdCode").innerHTML = `PASTE_YOUR_APPROVED_ADSTERRA_CODE_HERE`;
+const initialGame =
+  new URLSearchParams(window.location.search).get("game");
+
+if (initialGame && GAMES.some(game => game.id === initialGame)) {
+  openGame(initialGame, {
+    fromHistory: true
+  });
+}
+
+/* =========================================================
+   ADSTERRA SETUP
+
+   Add your approved ad code in the relevant containers.
+   Keep provider-supplied ad code unchanged.
+   Do not cover gameplay controls with advertisements.
+   ========================================================= */
+
+// Top banner example:
+// $("topAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
 // $("topAdPlaceholder").classList.add("hidden");
 
-// Example for the bottom banner:
-// $("bottomAdCode").innerHTML = `PASTE_YOUR_APPROVED_ADSTERRA_CODE_HERE`;
+// Bottom banner example:
+// $("bottomAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
 // $("bottomAdPlaceholder").classList.add("hidden");
 
-// Example for the player banner:
-// $("playerAdCode").innerHTML = `PASTE_YOUR_APPROVED_ADSTERRA_CODE_HERE`;
+// Game-player banner example:
+// $("playerAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
 // $("playerAdPlaceholder").classList.add("hidden");
