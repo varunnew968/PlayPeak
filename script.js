@@ -2968,21 +2968,9 @@ if (initialGame && GAMES.some(game => game.id === initialGame)) {
 }
 
 /* =========================================================
-   ADSTERRA SETUP
+   ADSTERRA PLACEMENTS
 
-   Your existing ad scripts in index.html remain unchanged.
-   The following are optional placeholders if you later wish
-   to insert a separate approved banner code in these slots.
+   Banner and native ad snippets are embedded directly in index.html
+   so their provider scripts execute normally. Do not inject these
+   snippets via innerHTML; browsers do not reliably execute those scripts.
    ========================================================= */
-
-// Top banner example:
-// $("topAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
-// $("topAdPlaceholder").classList.add("hidden");
-
-// Bottom banner example:
-// $("bottomAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
-// $("bottomAdPlaceholder").classList.add("hidden");
-
-// Game-player banner example:
-// $("playerAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
-// $("playerAdPlaceholder").classList.add("hidden");
