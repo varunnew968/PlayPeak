@@ -1,241 +1,693 @@
 
 /* =========================================================
-   ARCADE POP — SINGLE GAMEZOP EMBED
-   All dummy games removed.
-   Add more games later when their links are provided.
+   ARCADE POP — COMPLETE GAME SCRIPT
+   GameZipper direct embeds + local game banners
+   HTML + CSS + Vanilla JavaScript
    ========================================================= */
 
-(() => {
-  "use strict";
 
-  const GAME = {
+const GAMES = [
+  {
+    id: "gamezop-arcade",
     title: "Gamezop Arcade",
-    category: "ARCADE",
+    category: "Arcade",
     description: "Play instantly in your browser — no download required.",
-    embedUrl: "https://zv1y2i8p.play.gamezop.com/g/ClwHwJKrv"
-  };
+    art: "🎮",
+    cover: "linear-gradient(135deg,#6558e8,#9b93ff)",
+    image: "",
+    rating: "New",
+    badge: "NEW GAME",
+    tags: ["Arcade", "Casual", "Quick play"],
+    officialUrl: "https://zv1y2i8p.play.gamezop.com/g/ClwHwJKrv",
+    embedUrl: "https://zv1y2i8p.play.gamezop.com/g/ClwHwJKrv",
+    featured: true
+  }
+];
 
-  const $ = id => document.getElementById(id);
+const CATEGORIES = [
+  { name: "All", icon: "✦" },
+  { name: "Arcade", icon: "🕹️" },
+  { name: "Racing", icon: "🏎️" },
+  { name: "Puzzle", icon: "🧩" },
+  { name: "Action", icon: "💥" },
+  { name: "Adventure", icon: "🗺️" },
+  { name: "Platformer", icon: "👟" },
+  { name: "Sports", icon: "⚽" },
+  { name: "Casual", icon: "🌈" }
+];
 
-  function addSingleGameStyles() {
-    const style = document.createElement("style");
+const state = {
+  category: "All",
+  query: "",
+  favoritesOnly: false,
+  currentGame: null,
+  favorites: new Set()
+};
 
-    style.textContent = `
-      main {
-        width: 100%;
-        max-width: 1440px;
-        margin: 0 auto;
-        padding: 10px clamp(8px, 2vw, 24px) 20px;
-      }
+const $ = id => document.getElementById(id);
 
-      #homeView,
-      .back-btn,
-      .related-panel,
-      .player-ad,
-      .about-game,
-      #favoriteToggle,
-      .topbar .search,
-      #favoritesBtn,
-      .footer {
-        display: none !important;
-      }
+const homeView = $("homeView");
+const playerView = $("playerView");
 
-      #playerView {
-        display: block;
-        padding-top: 0;
-      }
+/* =========================================================
+   HELPERS
+   ========================================================= */
 
-      .player-heading {
-        margin: 8px 0 12px;
-      }
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[character]));
+}
 
-      .player-heading h1 {
-        margin: 3px 0 5px;
-      }
+function showToast(message) {
+  const toast = $("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
 
-      .player-layout {
-        display: block;
-      }
+  clearTimeout(showToast.timer);
 
-      .player-main {
-        width: 100%;
-        min-width: 0;
-      }
+  showToast.timer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2400);
+}
 
-      .game-frame-wrap {
-        width: 100%;
-        height: calc(100vh - 175px);
-        height: calc(100dvh - 175px);
-        min-height: 360px;
-        max-height: none;
-        aspect-ratio: auto;
-        overflow: hidden;
-        border-radius: 14px;
-        background: #111;
-      }
+function safeHttps(url) {
+  try {
+    return new URL(url).protocol === "https:";
+  } catch {
+    return false;
+  }
+}
 
-      .game-frame-wrap iframe {
-        display: block;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
+/* =========================================================
+   GAME CARDS WITH BANNER IMAGES
+   ========================================================= */
 
-      .player-toolbar {
-        margin: 8px 0;
-      }
+function cardMarkup(game) {
+  const banner = game.image
+    ? `<img
+         class="game-banner-image"
+         src="${escapeHTML(game.image)}"
+         alt="${escapeHTML(game.title)}"
+         loading="lazy"
+         onerror="this.remove();this.parentElement.classList.remove('has-banner')"
+       >`
+    : "";
 
-      @media (max-width: 520px) {
-        main {
-          padding: 8px 8px 14px;
+  return `
+    <article
+      class="game-card"
+      data-game="${escapeHTML(game.id)}"
+      tabindex="0"
+      role="button"
+      aria-label="Play ${escapeHTML(game.title)}"
+    >
+      <div
+        class="game-cover ${game.image ? "has-banner" : ""}"
+        style="--cover:${game.cover}"
+      >
+        ${banner}
+
+        <span class="game-art" aria-hidden="true">
+          ${game.art}
+        </span>
+
+        <button
+          class="game-play"
+          tabindex="-1"
+          aria-hidden="true"
+        >▶</button>
+      </div>
+
+      <div class="game-meta">
+        <h3>${escapeHTML(game.title)}</h3>
+        <p>
+          <span>${escapeHTML(game.category)}</span>
+          <span class="rating">★ ${escapeHTML(game.rating)}</span>
+        </p>
+      </div>
+    </article>
+  `;
+}
+
+/* =========================================================
+   CATEGORY FILTERS
+   ========================================================= */
+
+function renderCategories() {
+  $("categoryStrip").innerHTML = CATEGORIES.map(category => `
+    <button
+      class="category-chip ${
+        state.category === category.name ? "active" : ""
+      }"
+      data-category="${category.name}"
+    >
+      <span>${category.icon}</span>
+      ${category.name === "All" ? "All games" : category.name}
+    </button>
+  `).join("");
+}
+
+function matches(game) {
+  const query = state.query.toLowerCase().trim();
+
+  const text = [
+    game.title,
+    game.category,
+    game.description,
+    ...game.tags
+  ].join(" ").toLowerCase();
+
+  return (
+    (state.category === "All" ||
+      game.category === state.category) &&
+    (!query || text.includes(query)) &&
+    (!state.favoritesOnly ||
+      state.favorites.has(game.id))
+  );
+}
+
+function renderGames() {
+  const list = GAMES.filter(matches);
+
+  $("gameGrid").innerHTML =
+    list.map(cardMarkup).join("");
+
+  $("resultCount").textContent =
+    `${list.length} game${list.length === 1 ? "" : "s"}`;
+
+  $("emptyState").classList.toggle(
+    "hidden",
+    list.length !== 0
+  );
+
+  $("gameGrid").classList.toggle(
+    "hidden",
+    list.length === 0
+  );
+
+  $("catalogTitle").textContent = state.favoritesOnly
+    ? "Your favourites"
+    : state.query
+      ? "Search results"
+      : state.category === "All"
+        ? "Explore games"
+        : state.category + " games";
+
+  $("catalogSubtitle").textContent = state.favoritesOnly
+    ? "Your saved picks, all in one place"
+    : "Find your next favourite";
+
+  renderCategories();
+}
+
+/* =========================================================
+   FEATURED GAMES WITH BANNER IMAGES
+   ========================================================= */
+
+function renderFeatured() {
+  $("featuredGrid").innerHTML = GAMES
+    .filter(game => game.featured)
+    .map(game => `
+      <button
+        class="feature-card ${game.image ? "has-image" : ""}"
+        data-game="${escapeHTML(game.id)}"
+        data-art="${escapeHTML(game.art)}"
+        style="--card-bg:${game.cover}"
+      >
+        ${
+          game.image
+            ? `<img
+                 class="feature-banner-image"
+                 src="${escapeHTML(game.image)}"
+                 alt="${escapeHTML(game.title)}"
+                 loading="lazy"
+                 onerror="this.remove();this.parentElement.classList.remove('has-image')"
+               >`
+            : ""
         }
 
-        .topbar {
-          position: relative;
-        }
+        <div class="feature-top">
+          <span class="feature-badge">
+            ${escapeHTML(game.badge)}
+          </span>
+          <span class="play-circle">▶</span>
+        </div>
 
-        .game-frame-wrap {
-          height: calc(100dvh - 150px);
-          min-height: 340px;
-          border-radius: 10px;
-        }
+        <div class="feature-info">
+          <h3>${escapeHTML(game.title)}</h3>
+          <p>
+            ${escapeHTML(game.category)} · ★ ${escapeHTML(game.rating)}
+          </p>
+        </div>
+      </button>
+    `)
+    .join("");
+}
 
-        .player-heading h1 {
-          font-size: 22px;
-        }
+/* =========================================================
+   RELATED GAMES WITH THUMBNAILS
+   ========================================================= */
 
-        .player-heading p {
-          font-size: 11px;
-        }
-      }
-    `;
+function renderRelated(current) {
+  $("relatedGames").innerHTML = GAMES
+    .filter(game => game.id !== current.id)
+    .slice(0, 5)
+    .map(game => `
+      <button
+        class="related-item"
+        data-game="${escapeHTML(game.id)}"
+      >
+        <span
+          class="related-art"
+          style="--cover:${game.cover}"
+        >
+          ${
+            game.image
+              ? `<img
+                   class="related-banner-image"
+                   src="${escapeHTML(game.image)}"
+                   alt="${escapeHTML(game.title)}"
+                   loading="lazy"
+                   onerror="this.remove()"
+                 >`
+              : game.art
+          }
+        </span>
 
-    document.head.appendChild(style);
+        <span>
+          <strong>${escapeHTML(game.title)}</strong>
+          <small>
+            ${escapeHTML(game.category)} · ★ ${escapeHTML(game.rating)}
+          </small>
+        </span>
+      </button>
+    `)
+    .join("");
+}
+
+/* =========================================================
+   SHAREABLE GAME URL
+   ========================================================= */
+
+function updateGameUrl(gameId, replace = false) {
+  try {
+    const url = new URL(window.location.href);
+
+    if (gameId) {
+      url.searchParams.set("game", gameId);
+    } else {
+      url.searchParams.delete("game");
+    }
+
+    if (replace) {
+      history.replaceState({}, "", url);
+    } else {
+      history.pushState({}, "", url);
+    }
+  } catch (error) {
+    console.warn("Could not update game URL:", error);
+  }
+}
+
+/* =========================================================
+   GAME PLAYER — GAMEZIPPER DIRECT EMBED
+   ========================================================= */
+
+function openGame(id, options = {}) {
+  const game = GAMES.find(item => item.id === id);
+
+  if (!game) return;
+
+  state.currentGame = game;
+  state.favoritesOnly = false;
+
+  if (!options.fromHistory) {
+    updateGameUrl(game.id, options.replaceHistory || false);
   }
 
-  function showGame() {
-    const homeView = $("homeView");
-    const playerView = $("playerView");
-    const frameWrap = $("gameFrameWrap");
+  homeView.classList.add("hidden");
+  playerView.classList.remove("hidden");
 
-    if (!playerView || !frameWrap) {
-      console.error(
-        "Arcade Pop: game player elements were not found in index.html."
-      );
-      return;
-    }
+  $("playerTitle").textContent = game.title;
+  $("playerCategory").textContent =
+    game.category.toUpperCase();
+  $("playerDescription").textContent =
+    game.description;
+  $("aboutDescription").textContent =
+    game.description;
 
-    // Hide all dummy game catalog content.
-    if (homeView) {
-      homeView.classList.add("hidden");
-    }
+  $("gameTags").innerHTML = game.tags
+    .map(tag => `<span class="tag">${escapeHTML(tag)}</span>`)
+    .join("");
 
-    playerView.classList.remove("hidden");
+  $("favoriteToggle").classList.toggle(
+    "active",
+    state.favorites.has(game.id)
+  );
 
-    // Update the player heading.
-    const title = $("playerTitle");
-    const category = $("playerCategory");
-    const description = $("playerDescription");
+  $("favoriteToggle").textContent =
+    state.favorites.has(game.id) ? "♥" : "♡";
 
-    if (title) title.textContent = GAME.title;
-    if (category) category.textContent = GAME.category;
-    if (description) description.textContent = GAME.description;
+  const wrap = $("gameFrameWrap");
 
-    const aboutDescription = $("aboutDescription");
+  // Remove the previously opened game.
+  wrap.querySelector("iframe")?.remove();
 
-    if (aboutDescription) {
-      aboutDescription.textContent = GAME.description;
-    }
+  const placeholder = $("gameFramePlaceholder");
 
-    // Remove any old iframe.
-    frameWrap.querySelectorAll("iframe").forEach(frame => {
-      frame.remove();
-    });
+  if (game.embedUrl && safeHttps(game.embedUrl)) {
+    placeholder.classList.add("hidden");
 
-    // Hide the old placeholder.
-    const placeholder = $("gameFramePlaceholder");
-
-    if (placeholder) {
-      placeholder.classList.add("hidden");
-    }
-
-    // Load the exact Gamezop iframe URL supplied by you.
     const iframe = document.createElement("iframe");
 
-    iframe.src = GAME.embedUrl;
-    iframe.title = GAME.title;
-    iframe.setAttribute("seamless", "seamless");
-    iframe.setAttribute("allowtransparency", "true");
-    iframe.setAttribute("allowfullscreen", "true");
-    iframe.setAttribute("frameborder", "0");
-    iframe.setAttribute("scrolling", "no");
-    iframe.setAttribute(
-      "allow",
-      "autoplay; fullscreen; gamepad"
-    );
-
+    // Use the exact official embed URL supplied by GameZipper.
+    iframe.src = game.embedUrl;
+    iframe.title = game.title;
+    iframe.loading = "eager";
     iframe.style.width = "100%";
     iframe.style.height = "100%";
-    iframe.style.border = "0";
-    iframe.style.display = "block";
-    iframe.loading = "eager";
+    iframe.style.border = "none";
+    iframe.scrolling = "no";
+    iframe.allow = "autoplay; fullscreen; gamepad";
+    iframe.allowFullscreen = true;
 
-    frameWrap.appendChild(iframe);
-
-    // Clear any dummy related games.
-    const related = $("relatedGames");
-
-    if (related) {
-      related.replaceChildren();
-    }
-
-    // Hide the old external-game link.
-    const officialLink = $("openOfficialLink");
-
-    if (officialLink) {
-      officialLink.classList.add("hidden");
-    }
-
-    // Clicking the Arcade Pop logo reloads the game.
-    const homeButton = $("homeBtn");
-
-    if (homeButton) {
-      homeButton.setAttribute(
-        "aria-label",
-        "Reload Gamezop game"
-      );
-
-      homeButton.addEventListener("click", event => {
-        event.preventDefault();
-
-        const currentFrame =
-          frameWrap.querySelector("iframe");
-
-        if (currentFrame) {
-          currentFrame.src = GAME.embedUrl;
-        }
-      });
-    }
-
-    const year = $("year");
-
-    if (year) {
-      year.textContent = new Date().getFullYear();
-    }
-  }
-
-  function init() {
-    addSingleGameStyles();
-    showGame();
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener(
-      "DOMContentLoaded",
-      init,
-      { once: true }
-    );
+    wrap.appendChild(iframe);
   } else {
-    init();
+    placeholder.classList.remove("hidden");
   }
-})();
+
+  const official = $("openOfficialLink");
+
+  if (game.officialUrl && safeHttps(game.officialUrl)) {
+    official.href = game.officialUrl;
+    official.classList.remove("hidden");
+  } else {
+    official.href = "#";
+    official.classList.add("hidden");
+  }
+
+  renderRelated(game);
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+function goHome(options = {}) {
+  playerView.classList.add("hidden");
+  homeView.classList.remove("hidden");
+
+  state.currentGame = null;
+
+  if (!options.fromHistory) {
+    updateGameUrl(null, options.replaceHistory || false);
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+/* =========================================================
+   FAVORITES
+   ========================================================= */
+
+function toggleFavorite() {
+  if (!state.currentGame) return;
+
+  const id = state.currentGame.id;
+
+  if (state.favorites.has(id)) {
+    state.favorites.delete(id);
+  } else {
+    state.favorites.add(id);
+  }
+
+  $("favoriteToggle").classList.toggle(
+    "active",
+    state.favorites.has(id)
+  );
+
+  $("favoriteToggle").textContent =
+    state.favorites.has(id) ? "♥" : "♡";
+
+  showToast(
+    state.favorites.has(id)
+      ? "Added to favourites"
+      : "Removed from favourites"
+  );
+}
+
+function resetFilters() {
+  state.category = "All";
+  state.query = "";
+  state.favoritesOnly = false;
+
+  $("searchInput").value = "";
+  $("favoritesBtn").classList.remove("active");
+
+  renderGames();
+}
+
+/* =========================================================
+   CLICK AND KEYBOARD EVENTS
+   ========================================================= */
+
+document.addEventListener("click", event => {
+  const gameTarget = event.target.closest("[data-game]");
+
+  if (gameTarget) {
+    openGame(gameTarget.dataset.game);
+    return;
+  }
+
+  const categoryTarget =
+    event.target.closest("[data-category]");
+
+  if (categoryTarget) {
+    state.category = categoryTarget.dataset.category;
+    state.favoritesOnly = false;
+
+    $("favoritesBtn").classList.remove("active");
+
+    renderGames();
+
+    $("gamesSection").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+});
+
+document.addEventListener("keydown", event => {
+  if (
+    (event.key === "Enter" || event.key === " ") &&
+    event.target.matches(".game-card")
+  ) {
+    event.preventDefault();
+    openGame(event.target.dataset.game);
+  }
+
+  if (
+    event.key === "Escape" &&
+    !playerView.classList.contains("hidden")
+  ) {
+    goHome();
+  }
+});
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+$("searchForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  state.query = $("searchInput").value;
+  state.favoritesOnly = false;
+
+  $("favoritesBtn").classList.remove("active");
+
+  renderGames();
+
+  $("gamesSection").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+});
+
+$("searchInput").addEventListener("input", event => {
+  state.query = event.target.value;
+  state.favoritesOnly = false;
+
+  $("favoritesBtn").classList.remove("active");
+
+  renderGames();
+});
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+$("homeBtn").addEventListener("click", () => {
+  goHome();
+  resetFilters();
+});
+
+$("backBtn").addEventListener("click", goHome);
+
+$("favoriteToggle").addEventListener(
+  "click",
+  toggleFavorite
+);
+
+$("favoritesBtn").addEventListener("click", () => {
+  state.favoritesOnly = !state.favoritesOnly;
+  state.category = "All";
+  state.query = "";
+
+  $("searchInput").value = "";
+
+  $("favoritesBtn").classList.toggle(
+    "active",
+    state.favoritesOnly
+  );
+
+  renderGames();
+
+  $("gamesSection").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+  if (
+    state.favoritesOnly &&
+    state.favorites.size === 0
+  ) {
+    showToast("Tap the heart on a game to save it");
+  }
+});
+
+$("exploreBtn").addEventListener("click", () => {
+  $("gamesSection").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+});
+
+$("resetFilters").addEventListener(
+  "click",
+  resetFilters
+);
+
+document.querySelectorAll(".text-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    resetFilters();
+
+    $("gamesSection").scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+});
+
+/* =========================================================
+   FULLSCREEN
+   ========================================================= */
+
+$("fullscreenBtn").addEventListener(
+  "click",
+  async () => {
+    const frame = $("gameFrameWrap");
+
+    try {
+      if (!document.fullscreenElement) {
+        await frame.requestFullscreen();
+      } else {
+        await document.exitFullscreen();
+      }
+    } catch {
+      showToast(
+        "Fullscreen isn't available in this browser"
+      );
+    }
+  }
+);
+
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
+
+$("privacyLink").addEventListener("click", event => {
+  event.preventDefault();
+  showToast("Add your privacy policy URL before publishing.");
+});
+
+$("contactLink").addEventListener("click", event => {
+  event.preventDefault();
+  showToast("Add your contact email in index.html before publishing.");
+});
+
+$("licensingLink").addEventListener("click", event => {
+  event.preventDefault();
+  showToast("Add game credits and license details for each game.");
+});
+
+/* =========================================================
+   BACK/FORWARD AND DIRECT GAME LINKS
+   ========================================================= */
+
+window.addEventListener("popstate", () => {
+  const gameId =
+    new URLSearchParams(window.location.search).get("game");
+
+  if (gameId && GAMES.some(game => game.id === gameId)) {
+    openGame(gameId, { fromHistory: true });
+  } else {
+    goHome({ fromHistory: true });
+  }
+});
+
+/* COPYRIGHT */
+
+$("year").textContent = new Date().getFullYear();
+
+/* INITIAL RENDER */
+
+renderFeatured();
+renderGames();
+
+/* Open a game directly when its URL contains ?game=game-id */
+
+const initialGame =
+  new URLSearchParams(window.location.search).get("game");
+
+if (initialGame && GAMES.some(game => game.id === initialGame)) {
+  openGame(initialGame, { fromHistory: true });
+}
+
+/* =========================================================
+   ADSTERRA SETUP
+
+   Add your approved ad code in the relevant containers.
+   Keep provider-supplied ad code unchanged.
+   Do not cover gameplay controls with advertisements.
+   ========================================================= */
+
+// Top banner example:
+// $("topAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
+// $("topAdPlaceholder").classList.add("hidden");
+
+// Bottom banner example:
+// $("bottomAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
+// $("bottomAdPlaceholder").classList.add("hidden");
+
+// Game-player banner example:
+// $("playerAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
+// $("playerAdPlaceholder").classList.add("hidden");
