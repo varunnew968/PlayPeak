@@ -1,25 +1,16 @@
-# PlayPeak Premium Website Redesign
+# PlayPeak — Three Banner Slider Update
 
-This package updates your existing PlayPeak site branding and design while preserving your supplied game catalog and ad code.
-
-## Files
-- `index.html` — updated PlayPeak title/metadata, logo use, improved hero details, and preserved ad containers.
-- `style.css` — refined premium responsive styling.
-- `script.js` — your supplied game catalog and interactions, kept intact.
-- `favicon.svg` — browser favicon.
-- `apple-touch-icon.png` — touch icon.
-- `assets/playpeak-logo.svg` — full PlayPeak wordmark.
-- `assets/playpeak-mark.svg` — standalone brand mark.
+Includes:
+- Three custom-generated gaming hero banners in `assets/hero-banners/` (optimized WebP)
+- Auto-advancing hero slider, 6.5-second timing, dots, previous/next controls, hover/focus pause, tab-visibility pause, reduced-motion support
+- Favicon used beside the PlayPeak wordmark in the header and footer
+- Existing game catalog, navigation, favorites, player page, ad slots and Adsterra codes preserved
+- Game-card cover paths changed from missing local image files to Gamezop's static wall-art URL pattern based on each game's `gamezopId`; image errors gracefully fall back to the card artwork
 
 ## Install
-1. Back up the current website folder.
-2. Copy these files into the website root, replacing `index.html`, `style.css`, and `script.js`.
-3. Merge the included `assets` folder with your existing `assets` folder. Do not delete your existing `assets/game-banners` folder.
-4. Open `index.html` locally or run your existing local preview server.
-5. Hard-refresh using Ctrl+F5.
+1. Back up your site.
+2. Replace `index.html`, `style.css`, and `script.js` with these files.
+3. Merge the root favicon files and `assets/hero-banners/` into your current website root, preserving other assets and any existing game-banner folder.
+4. Test locally with Ctrl+F5 on desktop and mobile.
 
-## Advertising
-The existing three ad placements remain in `index.html`: homepage/top banner (`topAdCode`), catalog-bottom banner (`bottomAdCode`), and player banner (`playerAdCode`). The ad scripts in the head were preserved exactly. Their appearance still depends on your provider's settings and whether their code is assigned to those containers.
-
-## Game artwork
-Your supplied `script.js` points to `assets/game-banners/*.png`. Keep the matching artwork files in that folder. If any banner is missing, the site falls back to the card's gradient/emoji artwork instead of showing a broken image.
+The slider images are bundled locally, so the hero slider itself does not depend on external image URLs.

@@ -22,7 +22,7 @@ const GAMES = [
     "badge": "FEATURED",
     "featured": true,
     "cover": "linear-gradient(135deg,#2f294e,#b94db6)",
-    "image": "assets/game-banners/final-war-dead-zone.png",
+    "image": "https://static.gamezop.com/gTD1yQp3R/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/gTD1yQp3R",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/gTD1yQp3R"
   },
@@ -42,7 +42,7 @@ const GAMES = [
     "badge": "FEATURED",
     "featured": true,
     "cover": "linear-gradient(135deg,#2f294e,#b94db6)",
-    "image": "assets/game-banners/assassins-hunt-wild-west.png",
+    "image": "https://static.gamezop.com/9lpHai56Q/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/9lpHai56Q",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/9lpHai56Q"
   },
@@ -62,7 +62,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f5e93,#7fcbd9)",
-    "image": "assets/game-banners/triple-tile-match-master.png",
+    "image": "https://static.gamezop.com/kWnZGIWIJ/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/kWnZGIWIJ",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/kWnZGIWIJ"
   },
@@ -82,7 +82,7 @@ const GAMES = [
     "badge": "FEATURED",
     "featured": true,
     "cover": "linear-gradient(135deg,#326b68,#80cfb8)",
-    "image": "assets/game-banners/cyberfusion.png",
+    "image": "https://static.gamezop.com/HJXei0j/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/HJXei0j",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/HJXei0j"
   },
@@ -102,7 +102,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#54446f,#c4a5ce)",
-    "image": "assets/game-banners/chess-grandmaster.png",
+    "image": "https://static.gamezop.com/rkAXTzkD5kX/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/rkAXTzkD5kX",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/rkAXTzkD5kX"
   },
@@ -122,7 +122,7 @@ const GAMES = [
     "badge": "FEATURED",
     "featured": true,
     "cover": "linear-gradient(135deg,#6b6bc5,#edb0d3)",
-    "image": "assets/game-banners/bubble-shooter-classic.png",
+    "image": "https://static.gamezop.com/yVywAGBQ6/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/yVywAGBQ6",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/yVywAGBQ6"
   },
@@ -142,7 +142,7 @@ const GAMES = [
     "badge": "FEATURED",
     "featured": true,
     "cover": "linear-gradient(135deg,#3c65bb,#e184c7)",
-    "image": "assets/game-banners/fruity-fiesta.png",
+    "image": "https://static.gamezop.com/mKZZW9NXW/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/mKZZW9NXW",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/mKZZW9NXW"
   },
@@ -162,7 +162,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#385b92,#8db8e6)",
-    "image": "assets/game-banners/spider-solitaire.png",
+    "image": "https://static.gamezop.com/B1MfIa4QCg/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/B1MfIa4QCg",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/B1MfIa4QCg"
   },
@@ -182,7 +182,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6655b9,#e37fcb)",
-    "image": "assets/game-banners/sudoku-classic.png",
+    "image": "https://static.gamezop.com/SJgx126Qc0H/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SJgx126Qc0H",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SJgx126Qc0H"
   },
@@ -202,7 +202,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f5e93,#7fcbd9)",
-    "image": "assets/game-banners/merge-mania.png",
+    "image": "https://static.gamezop.com/hfPOimYqY/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/hfPOimYqY",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/hfPOimYqY"
   },
@@ -222,7 +222,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f4b41,#9bbd98)",
-    "image": "assets/game-banners/quad-colors.png",
+    "image": "https://static.gamezop.com/ByQxJnp7qRB/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/ByQxJnp7qRB",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/ByQxJnp7qRB"
   },
@@ -242,7 +242,7 @@ const GAMES = [
     "badge": "FEATURED",
     "featured": true,
     "cover": "linear-gradient(135deg,#2f4b41,#9bbd98)",
-    "image": "assets/game-banners/ludo-with-friends.png",
+    "image": "https://static.gamezop.com/SkhljT2fdgb/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SkhljT2fdgb",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SkhljT2fdgb"
   },
@@ -262,7 +262,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#326b68,#80cfb8)",
-    "image": "assets/game-banners/blocks-adventure-jungle-saga.png",
+    "image": "https://static.gamezop.com/UCS62KJ8c/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/UCS62KJ8c",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/UCS62KJ8c"
   },
@@ -282,7 +282,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#326b68,#80cfb8)",
-    "image": "assets/game-banners/slide-and-divide.png",
+    "image": "https://static.gamezop.com/PLQTtp9Ei/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/PLQTtp9Ei",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/PLQTtp9Ei"
   },
@@ -302,7 +302,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6b6bc5,#edb0d3)",
-    "image": "assets/game-banners/trap-the-virus.png",
+    "image": "https://static.gamezop.com/ByAWPfLYdJx/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/ByAWPfLYdJx",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/ByAWPfLYdJx"
   },
@@ -322,7 +322,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#326b68,#80cfb8)",
-    "image": "assets/game-banners/salazar.png",
+    "image": "https://static.gamezop.com/rJWX-kadu/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/rJWX-kadu",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/rJWX-kadu"
   },
@@ -342,7 +342,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f5e93,#7fcbd9)",
-    "image": "assets/game-banners/spell-wizard.png",
+    "image": "https://static.gamezop.com/zMxz8LNrp/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/zMxz8LNrp",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/zMxz8LNrp"
   },
@@ -362,7 +362,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#326b68,#80cfb8)",
-    "image": "assets/game-banners/bubble-smash.png",
+    "image": "https://static.gamezop.com/ryJGkhT7qAB/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/ryJGkhT7qAB",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/ryJGkhT7qAB"
   },
@@ -382,7 +382,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#326b68,#80cfb8)",
-    "image": "assets/game-banners/mahjong-scandinavian.png",
+    "image": "https://static.gamezop.com/JVhRZNwly/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/JVhRZNwly",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/JVhRZNwly"
   },
@@ -402,7 +402,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6655b9,#e37fcb)",
-    "image": "assets/game-banners/monsterjong.png",
+    "image": "https://static.gamezop.com/S1-bxXI39/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/S1-bxXI39",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/S1-bxXI39"
   },
@@ -422,7 +422,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6b6bc5,#edb0d3)",
-    "image": "assets/game-banners/box-crush.png",
+    "image": "https://static.gamezop.com/S1Wrpf1v5ym/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/S1Wrpf1v5ym",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/S1Wrpf1v5ym"
   },
@@ -442,7 +442,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6b6bc5,#edb0d3)",
-    "image": "assets/game-banners/greedy-gnomes.png",
+    "image": "https://static.gamezop.com/BydCYS-ON/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/BydCYS-ON",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/BydCYS-ON"
   },
@@ -462,7 +462,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6b6bc5,#edb0d3)",
-    "image": "assets/game-banners/rescue-juliet.png",
+    "image": "https://static.gamezop.com/4ykgM_yzbcg/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/4ykgM_yzbcg",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/4ykgM_yzbcg"
   },
@@ -482,7 +482,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f5e93,#7fcbd9)",
-    "image": "assets/game-banners/word-finder.png",
+    "image": "https://static.gamezop.com/r1K-J3TQ5Ar/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/r1K-J3TQ5Ar",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/r1K-J3TQ5Ar"
   },
@@ -502,7 +502,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f5e93,#7fcbd9)",
-    "image": "assets/game-banners/mahjong-aloha.png",
+    "image": "https://static.gamezop.com/pGF1Q7l1s/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/pGF1Q7l1s",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/pGF1Q7l1s"
   },
@@ -522,7 +522,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#326b68,#80cfb8)",
-    "image": "assets/game-banners/greedy-guzzler.png",
+    "image": "https://static.gamezop.com/lxDr07zuL/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/lxDr07zuL",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/lxDr07zuL"
   },
@@ -542,7 +542,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6655b9,#e37fcb)",
-    "image": "assets/game-banners/swipe-art-puzzle.png",
+    "image": "https://static.gamezop.com/rJsl0KSbuN/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/rJsl0KSbuN",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/rJsl0KSbuN"
   },
@@ -562,7 +562,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f5e93,#7fcbd9)",
-    "image": "assets/game-banners/jelly-bears.png",
+    "image": "https://static.gamezop.com/SJcRYSbu4/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SJcRYSbu4",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SJcRYSbu4"
   },
@@ -582,7 +582,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6655b9,#e37fcb)",
-    "image": "assets/game-banners/hex-burst.png",
+    "image": "https://static.gamezop.com/H1abja2M_eb/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/H1abja2M_eb",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/H1abja2M_eb"
   },
@@ -602,7 +602,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6655b9,#e37fcb)",
-    "image": "assets/game-banners/jelly-slice.png",
+    "image": "https://static.gamezop.com/SJ3-ELT8p-x/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SJ3-ELT8p-x",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SJ3-ELT8p-x"
   },
@@ -622,7 +622,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f5e93,#7fcbd9)",
-    "image": "assets/game-banners/animal-connection.png",
+    "image": "https://static.gamezop.com/on1jVCbBn/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/on1jVCbBn",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/on1jVCbBn"
   },
@@ -642,7 +642,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f5e93,#7fcbd9)",
-    "image": "assets/game-banners/snack-time.png",
+    "image": "https://static.gamezop.com/SkKlAYSbuE/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SkKlAYSbuE",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SkKlAYSbuE"
   },
@@ -662,7 +662,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f5e93,#7fcbd9)",
-    "image": "assets/game-banners/jelly-doods.png",
+    "image": "https://static.gamezop.com/rJsWV8aIa-l/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/rJsWV8aIa-l",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/rJsWV8aIa-l"
   },
@@ -682,7 +682,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6655b9,#e37fcb)",
-    "image": "assets/game-banners/guess-the-flag.png",
+    "image": "https://static.gamezop.com/SKLI0L06A/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SKLI0L06A",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SKLI0L06A"
   },
@@ -702,7 +702,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#326b68,#80cfb8)",
-    "image": "assets/game-banners/tic-tac-toe-11.png",
+    "image": "https://static.gamezop.com/Hk2yhp7cCH/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/Hk2yhp7cCH",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/Hk2yhp7cCH"
   },
@@ -722,7 +722,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6b6bc5,#edb0d3)",
-    "image": "assets/game-banners/oh-yes.png",
+    "image": "https://static.gamezop.com/SkyRBO1b/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SkyRBO1b",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SkyRBO1b"
   },
@@ -742,7 +742,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#326b68,#80cfb8)",
-    "image": "assets/game-banners/pop-soap.png",
+    "image": "https://static.gamezop.com/SJX7TGkDq1X/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SJX7TGkDq1X",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SJX7TGkDq1X"
   },
@@ -762,7 +762,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f5e93,#7fcbd9)",
-    "image": "assets/game-banners/cubes-got-moves.png",
+    "image": "https://static.gamezop.com/S1JXaMJDqJX/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/S1JXaMJDqJX",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/S1JXaMJDqJX"
   },
@@ -782,7 +782,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6b6bc5,#edb0d3)",
-    "image": "assets/game-banners/alien-kindergarten.png",
+    "image": "https://static.gamezop.com/r1Xm38FQkl/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/r1Xm38FQkl",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/r1Xm38FQkl"
   },
@@ -802,7 +802,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6655b9,#e37fcb)",
-    "image": "assets/game-banners/jello-go-round.png",
+    "image": "https://static.gamezop.com/SkRZZUoXI8g/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SkRZZUoXI8g",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SkRZZUoXI8g"
   },
@@ -822,7 +822,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#6b6bc5,#edb0d3)",
-    "image": "assets/game-banners/blackbeards-island.png",
+    "image": "https://static.gamezop.com/rk-Rtrb_V/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/rk-Rtrb_V",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/rk-Rtrb_V"
   },
@@ -842,7 +842,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#3c65bb,#e184c7)",
-    "image": "assets/game-banners/fruit-merge-reloaded.png",
+    "image": "https://static.gamezop.com/ClwHwJKrv/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/ClwHwJKrv",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/ClwHwJKrv"
   },
@@ -862,7 +862,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#1e6b65,#4fd1a1)",
-    "image": "assets/game-banners/super-sprint.png",
+    "image": "https://static.gamezop.com/HyV_Nm-kK/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/HyV_Nm-kK",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/HyV_Nm-kK"
   },
@@ -882,7 +882,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/tower-twist.png",
+    "image": "https://static.gamezop.com/HJT46GkPcy7/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/HJT46GkPcy7",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/HJT46GkPcy7"
   },
@@ -902,7 +902,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#e15c65,#f6b454)",
-    "image": "assets/game-banners/dunk-draw.png",
+    "image": "https://static.gamezop.com/r1xZyhTQ50r/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/r1xZyhTQ50r",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/r1xZyhTQ50r"
   },
@@ -922,7 +922,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/bouncy.png",
+    "image": "https://static.gamezop.com/H1Tz6z1Dqym/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/H1Tz6z1Dqym",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/H1Tz6z1Dqym"
   },
@@ -942,7 +942,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/fruit-chop.png",
+    "image": "https://static.gamezop.com/rkWfy2pXq0r/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/rkWfy2pXq0r"
   },
@@ -962,7 +962,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#e15c65,#f6b454)",
-    "image": "assets/game-banners/pizza-dash.png",
+    "image": "https://static.gamezop.com/wMm3YDfJC/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/wMm3YDfJC",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/wMm3YDfJC"
   },
@@ -982,7 +982,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/hoopball-legends.png",
+    "image": "https://static.gamezop.com/H15Qk3pQ5CH/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/H15Qk3pQ5CH",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/H15Qk3pQ5CH"
   },
@@ -1002,7 +1002,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#e15c65,#f6b454)",
-    "image": "assets/game-banners/tricky-trip.png",
+    "image": "https://static.gamezop.com/NJ3xGOyfb5l/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/NJ3xGOyfb5l",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/NJ3xGOyfb5l"
   },
@@ -1022,7 +1022,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#e15c65,#f6b454)",
-    "image": "assets/game-banners/dodgy.png",
+    "image": "https://static.gamezop.com/ryRWrDaNPF/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/ryRWrDaNPF",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/ryRWrDaNPF"
   },
@@ -1042,7 +1042,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/zoo-pinball.png",
+    "image": "https://static.gamezop.com/Ske-CtBbdV/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/Ske-CtBbdV",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/Ske-CtBbdV"
   },
@@ -1062,7 +1062,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#e15c65,#f6b454)",
-    "image": "assets/game-banners/cuby-dash.png",
+    "image": "https://static.gamezop.com/Sy6b98udz0/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/Sy6b98udz0",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/Sy6b98udz0"
   },
@@ -1082,7 +1082,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#3c65bb,#e184c7)",
-    "image": "assets/game-banners/stay-on-the-road.png",
+    "image": "https://static.gamezop.com/HJ-72IFXyg/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/HJ-72IFXyg",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/HJ-72IFXyg"
   },
@@ -1102,7 +1102,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/vegetables-vs-chef.png",
+    "image": "https://static.gamezop.com/H1be5Ef0Qp/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/H1be5Ef0Qp",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/H1be5Ef0Qp"
   },
@@ -1122,7 +1122,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/bouncing-beasts.png",
+    "image": "https://static.gamezop.com/4y6efOyf-5g/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/4y6efOyf-5g",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/4y6efOyf-5g"
   },
@@ -1142,7 +1142,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#1e6b65,#4fd1a1)",
-    "image": "assets/game-banners/shade-shuffle.png",
+    "image": "https://static.gamezop.com/SyFcNzAX6/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SyFcNzAX6",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SyFcNzAX6"
   },
@@ -1162,7 +1162,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#1e6b65,#4fd1a1)",
-    "image": "assets/game-banners/falling-through.png",
+    "image": "https://static.gamezop.com/ByGqEfCXa/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/ByGqEfCXa",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/ByGqEfCXa"
   },
@@ -1182,7 +1182,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#1e6b65,#4fd1a1)",
-    "image": "assets/game-banners/exoplanet-express.png",
+    "image": "https://static.gamezop.com/SyEQTzyw91X/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SyEQTzyw91X",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SyEQTzyw91X"
   },
@@ -1202,7 +1202,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/skill-shot.png",
+    "image": "https://static.gamezop.com/ByvOVQZkK/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/ByvOVQZkK",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/ByvOVQZkK"
   },
@@ -1222,7 +1222,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#1e6b65,#4fd1a1)",
-    "image": "assets/game-banners/rock-the-dock.png",
+    "image": "https://static.gamezop.com/EJoezu1MWqg/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/EJoezu1MWqg",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/EJoezu1MWqg"
   },
@@ -1242,7 +1242,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#3c65bb,#e184c7)",
-    "image": "assets/game-banners/grumpy-gorilla.png",
+    "image": "https://static.gamezop.com/N1sZfO1fWqg/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/N1sZfO1fWqg",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/N1sZfO1fWqg"
   },
@@ -1262,7 +1262,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#1e6b65,#4fd1a1)",
-    "image": "assets/game-banners/spinning-shooter.png",
+    "image": "https://static.gamezop.com/B19EafJP9JX/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/B19EafJP9JX",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/B19EafJP9JX"
   },
@@ -1282,7 +1282,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#1e6b65,#4fd1a1)",
-    "image": "assets/game-banners/fidgety-frog.png",
+    "image": "https://static.gamezop.com/NkxfOJM-qg/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/NkxfOJM-qg",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/NkxfOJM-qg"
   },
@@ -1302,7 +1302,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/hop-kangaroo-hop.png",
+    "image": "https://static.gamezop.com/Bkozyhpmc0H/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/Bkozyhpmc0H",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/Bkozyhpmc0H"
   },
@@ -1322,7 +1322,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/watch-the-walls.png",
+    "image": "https://static.gamezop.com/BJm9VfCmp/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/BJm9VfCmp",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/BJm9VfCmp"
   },
@@ -1342,7 +1342,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#3c65bb,#e184c7)",
-    "image": "assets/game-banners/flexi-snake.png",
+    "image": "https://static.gamezop.com/SkQwnwnbK/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SkQwnwnbK",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SkQwnwnbK"
   },
@@ -1362,7 +1362,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/snake-king.png",
+    "image": "https://static.gamezop.com/ryTknTX5AS/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/ryTknTX5AS",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/ryTknTX5AS"
   },
@@ -1382,7 +1382,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/fizz-fuss.png",
+    "image": "https://static.gamezop.com/S1VZ-LjQUUl/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/S1VZ-LjQUUl",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/S1VZ-LjQUUl"
   },
@@ -1402,7 +1402,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#e15c65,#f6b454)",
-    "image": "assets/game-banners/fly-safe.png",
+    "image": "https://static.gamezop.com/Hkww3v3-F/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/Hkww3v3-F",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/Hkww3v3-F"
   },
@@ -1422,7 +1422,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#3c65bb,#e184c7)",
-    "image": "assets/game-banners/car-flip.png",
+    "image": "https://static.gamezop.com/ByRkh6XcAB/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/ByRkh6XcAB",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/ByRkh6XcAB"
   },
@@ -1442,7 +1442,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#8241ac,#f2a55b)",
-    "image": "assets/game-banners/jom-jom-jump.png",
+    "image": "https://static.gamezop.com/SyjAFr-dE/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SyjAFr-dE",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SyjAFr-dE"
   },
@@ -1462,7 +1462,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#3c65bb,#e184c7)",
-    "image": "assets/game-banners/sheep-stacking.png",
+    "image": "https://static.gamezop.com/V1IZG_1f-qg/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/V1IZG_1f-qg",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/V1IZG_1f-qg"
   },
@@ -1482,7 +1482,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f294e,#b94db6)",
-    "image": "assets/game-banners/zombies-cant-jump-2.png",
+    "image": "https://static.gamezop.com/rkxMV8TI6Wg/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/rkxMV8TI6Wg",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/rkxMV8TI6Wg"
   },
@@ -1502,7 +1502,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#303846,#d3a45b)",
-    "image": "assets/game-banners/hill-top-tanks.png",
+    "image": "https://static.gamezop.com/Cg8EBuMp7/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/Cg8EBuMp7",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/Cg8EBuMp7"
   },
@@ -1522,7 +1522,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#26384e,#ef8951)",
-    "image": "assets/game-banners/blazing-blades.png",
+    "image": "https://static.gamezop.com/UYiznUAya/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/UYiznUAya",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/UYiznUAya"
   },
@@ -1542,7 +1542,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#303846,#d3a45b)",
-    "image": "assets/game-banners/boulder-blast.png",
+    "image": "https://static.gamezop.com/HkTQJhTXqRS/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/HkTQJhTXqRS",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/HkTQJhTXqRS"
   },
@@ -1562,7 +1562,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#14253e,#d84c4c)",
-    "image": "assets/game-banners/bottle-shoot.png",
+    "image": "https://static.gamezop.com/B1fSpMkP51m/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/B1fSpMkP51m",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/B1fSpMkP51m"
   },
@@ -1582,7 +1582,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#26384e,#ef8951)",
-    "image": "assets/game-banners/pumpkin-smasher.png",
+    "image": "https://static.gamezop.com/rJXlRtBWd4/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/rJXlRtBWd4",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/rJXlRtBWd4"
   },
@@ -1602,7 +1602,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#26384e,#ef8951)",
-    "image": "assets/game-banners/punch-heroes.png",
+    "image": "https://static.gamezop.com/Sy64_WbU/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/Sy64_WbU",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/Sy64_WbU"
   },
@@ -1622,7 +1622,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#303846,#d3a45b)",
-    "image": "assets/game-banners/gun-master.png",
+    "image": "https://static.gamezop.com/REwFeKcoN/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/REwFeKcoN",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/REwFeKcoN"
   },
@@ -1642,7 +1642,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#14253e,#d84c4c)",
-    "image": "assets/game-banners/saloon-robbery.png",
+    "image": "https://static.gamezop.com/SJ8X6zyPcyX/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SJ8X6zyPcyX",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SJ8X6zyPcyX"
   },
@@ -1662,7 +1662,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#303846,#d3a45b)",
-    "image": "assets/game-banners/slap-fest.png",
+    "image": "https://static.gamezop.com/ryN9EGAQa/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/ryN9EGAQa",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/ryN9EGAQa"
   },
@@ -1682,7 +1682,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#14253e,#d84c4c)",
-    "image": "assets/game-banners/rocket-man.png",
+    "image": "https://static.gamezop.com/SyXuN7W1F/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SyXuN7W1F",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SyXuN7W1F"
   },
@@ -1702,7 +1702,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#2f294e,#b94db6)",
-    "image": "assets/game-banners/tower-buster.png",
+    "image": "https://static.gamezop.com/8WGtd7TLH/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/8WGtd7TLH",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/8WGtd7TLH"
   },
@@ -1722,7 +1722,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#303846,#d3a45b)",
-    "image": "assets/game-banners/aliens-attack.png",
+    "image": "https://static.gamezop.com/N1tgz_kzW5x/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/N1tgz_kzW5x",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/N1tgz_kzW5x"
   },
@@ -1742,7 +1742,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#a75565,#f6b55d)",
-    "image": "assets/game-banners/pool-master.png",
+    "image": "https://static.gamezop.com/hgempP8Sc/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/hgempP8Sc",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/hgempP8Sc"
   },
@@ -1762,7 +1762,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#234c9a,#f18d6a)",
-    "image": "assets/game-banners/foot-chinko.png",
+    "image": "https://static.gamezop.com/S1JfKuB9nR/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/S1JfKuB9nR",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/S1JfKuB9nR"
   },
@@ -1782,7 +1782,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#a75565,#f6b55d)",
-    "image": "assets/game-banners/bowling-stars.png",
+    "image": "https://static.gamezop.com/BkdJhTX50B/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/BkdJhTX50B",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/BkdJhTX50B"
   },
@@ -1802,7 +1802,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#a75565,#f6b55d)",
-    "image": "assets/game-banners/basket-champs.png",
+    "image": "https://static.gamezop.com/S1_V6GyP5ym/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/S1_V6GyP5ym",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/S1_V6GyP5ym"
   },
@@ -1822,7 +1822,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#234c9a,#f18d6a)",
-    "image": "assets/game-banners/city-cricket.png",
+    "image": "https://static.gamezop.com/HJP4afkvqJQ/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/HJP4afkvqJQ",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/HJP4afkvqJQ"
   },
@@ -1842,7 +1842,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#234c9a,#f18d6a)",
-    "image": "assets/game-banners/minigolf-kingdom.png",
+    "image": "https://static.gamezop.com/S1A0FBWuE/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/S1A0FBWuE",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/S1A0FBWuE"
   },
@@ -1862,7 +1862,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#a75565,#f6b55d)",
-    "image": "assets/game-banners/mafia-billiard-tricks.png",
+    "image": "https://static.gamezop.com/SkkV6MJD51Q/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SkkV6MJD51Q",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SkkV6MJD51Q"
   },
@@ -1882,7 +1882,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#234c9a,#f18d6a)",
-    "image": "assets/game-banners/soccer-jerks.png",
+    "image": "https://static.gamezop.com/BJ8Wb8j7ILx/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/BJ8Wb8j7ILx",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/BJ8Wb8j7ILx"
   },
@@ -1902,7 +1902,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#a75565,#f6b55d)",
-    "image": "assets/game-banners/football-mania.png",
+    "image": "https://static.gamezop.com/hazlxvfac/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/hazlxvfac",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/hazlxvfac"
   },
@@ -1922,7 +1922,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#215d80,#52c2d8)",
-    "image": "assets/game-banners/street-dunkies.png",
+    "image": "https://static.gamezop.com/rk7G6Mkvcym/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/rk7G6Mkvcym",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/rk7G6Mkvcym"
   },
@@ -1942,7 +1942,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#234c9a,#f18d6a)",
-    "image": "assets/game-banners/dribble-kings.png",
+    "image": "https://static.gamezop.com/SkJf58Ouf0/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SkJf58Ouf0",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SkJf58Ouf0"
   },
@@ -1962,7 +1962,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#215d80,#52c2d8)",
-    "image": "assets/game-banners/archery-champs.png",
+    "image": "https://static.gamezop.com/Bk9ynTQqCB/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/Bk9ynTQqCB",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/Bk9ynTQqCB"
   },
@@ -1982,7 +1982,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#277d73,#e0c957)",
-    "image": "assets/game-banners/super-goalie-auditions.png",
+    "image": "https://static.gamezop.com/SyO94GA7p/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/SyO94GA7p",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/SyO94GA7p"
   },
@@ -2002,7 +2002,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#a75565,#f6b55d)",
-    "image": "assets/game-banners/hero-archer.png",
+    "image": "https://static.gamezop.com/r1u7J3TmqCS/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/r1u7J3TmqCS",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/r1u7J3TmqCS"
   },
@@ -2022,7 +2022,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#a75565,#f6b55d)",
-    "image": "assets/game-banners/hipster-tennis.png",
+    "image": "https://static.gamezop.com/H1Wzaf1wqyQ/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/H1Wzaf1wqyQ",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/H1Wzaf1wqyQ"
   },
@@ -2042,7 +2042,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#a75565,#f6b55d)",
-    "image": "assets/game-banners/cricket-mania.png",
+    "image": "https://static.gamezop.com/PRbBrRtjr/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/PRbBrRtjr",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/PRbBrRtjr"
   },
@@ -2062,7 +2062,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#a75565,#f6b55d)",
-    "image": "assets/game-banners/dunk-shot.png",
+    "image": "https://static.gamezop.com/S1Ne12TQqCH/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/S1Ne12TQqCH",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/S1Ne12TQqCH"
   },
@@ -2082,7 +2082,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#215d80,#52c2d8)",
-    "image": "assets/game-banners/football-kickoff.png",
+    "image": "https://static.gamezop.com/WaQryduJa/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/WaQryduJa",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/WaQryduJa"
   },
@@ -2102,7 +2102,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#234c9a,#f18d6a)",
-    "image": "assets/game-banners/flappy-foot-chinko.png",
+    "image": "https://static.gamezop.com/r1z13aXqAB/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/r1z13aXqAB",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/r1z13aXqAB"
   },
@@ -2122,7 +2122,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#234c9a,#f18d6a)",
-    "image": "assets/game-banners/cricket-gunda.png",
+    "image": "https://static.gamezop.com/BkzmafyPqJm/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/BkzmafyPqJm",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/BkzmafyPqJm"
   },
@@ -2142,7 +2142,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#d5684f,#ffc568)",
-    "image": "assets/game-banners/chef-tycoon.png",
+    "image": "https://static.gamezop.com/xqO4nZ6Kt/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/xqO4nZ6Kt",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/xqO4nZ6Kt"
   },
@@ -2162,7 +2162,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#326b68,#80cfb8)",
-    "image": "assets/game-banners/merge-the-gems.png",
+    "image": "https://static.gamezop.com/XxembtJs1/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/XxembtJs1",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/XxembtJs1"
   },
@@ -2182,7 +2182,7 @@ const GAMES = [
     "badge": "PLAY NOW",
     "featured": false,
     "cover": "linear-gradient(135deg,#385b92,#8db8e6)",
-    "image": "assets/game-banners/battleships-armada.png",
+    "image": "https://static.gamezop.com/rkt7TzJv9k7/wall.png",
     "officialUrl": "https://zv1y2i8p.play.gamezop.com/g/rkt7TzJv9k7",
     "embedUrl": "https://zv1y2i8p.play.gamezop.com/g/rkt7TzJv9k7"
   }
@@ -2461,51 +2461,46 @@ function renderFeatured() {
 
 function renderRelated(current) {
   const container = $("relatedGames");
-
   if (!container) return;
 
-  const relatedGames = GAMES.filter(
-    game => game.id !== current.id
-  );
+  // Keep the player sidebar compact and relevant: same-category games first,
+  // then featured picks, then the remaining catalog. Never show every game.
+  const candidates = [
+    ...GAMES.filter(game => game.id !== current.id && game.category === current.category),
+    ...GAMES.filter(game => game.id !== current.id && game.featured),
+    ...GAMES.filter(game => game.id !== current.id)
+  ];
+  const seen = new Set();
+  const relatedGames = candidates.filter(game => {
+    if (seen.has(game.id)) return false;
+    seen.add(game.id);
+    return true;
+  }).slice(0, 6);
 
   if (relatedGames.length === 0) {
-    container.innerHTML = `
-      <p style="font-size:12px;line-height:1.6;color:#777b99;margin:4px 0;">
-        More games will appear here as you add their official links.
-      </p>
-    `;
+    container.innerHTML = `<p class="related-empty">More games will appear here as you add them.</p>`;
     return;
   }
 
   container.innerHTML = relatedGames.map(game => `
-    <button
-      class="related-item"
-      data-game="${escapeHTML(game.id)}"
-    >
-      <span
-        class="related-art"
-        style="--cover:${game.cover}"
-      >
+    <button type="button" class="related-item" data-game="${escapeHTML(game.id)}">
+      <span class="related-art" style="--cover:${game.cover}">
         ${game.image
-      ? `<img
-              class="related-banner-image"
-              src="${escapeHTML(game.image)}"
-              alt="${escapeHTML(game.title)}"
-              loading="lazy"
-              onerror="this.remove()"
-            >`
-      : game.art
-    }
+          ? `<img class="related-banner-image" src="${escapeHTML(game.image)}" alt="" loading="lazy" onerror="this.remove()">`
+          : `<span class="related-fallback-art" aria-hidden="true">${game.art}</span>`
+        }
+        <span class="related-play" aria-hidden="true">▶</span>
       </span>
-
-      <span>
+      <span class="related-copy">
         <strong>${escapeHTML(game.title)}</strong>
-        <small>
-          ${escapeHTML(game.category)}${game.rating ? ` · ★ ${escapeHTML(game.rating)}` : " · Instant play"}
-        </small>
+        <small>${escapeHTML(game.category)}${game.rating ? ` · ★ ${escapeHTML(game.rating)}` : " · Instant play"}</small>
       </span>
     </button>
-  `).join("");
+  `).join("") + `
+    <button type="button" class="related-more-btn" id="relatedViewAllBtn">
+      Browse all games <span aria-hidden="true">↗</span>
+    </button>
+  `;
 }
 
 /* =========================================================
@@ -2809,8 +2804,57 @@ if ($("homeBtn")) {
   $("homeBtn").addEventListener("click", () => {
     goHome();
     resetFilters();
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.classList.toggle("is-active", link.id === "navFeaturedBtn");
+    });
   });
 }
+
+function navigateHomeSection(sectionId, activeButtonId) {
+  if (playerView && !playerView.classList.contains("hidden")) {
+    goHome({ replaceHistory: true });
+  }
+
+  state.category = "All";
+  state.query = "";
+  state.favoritesOnly = false;
+  if ($("searchInput")) $("searchInput").value = "";
+  if ($("favoritesBtn")) $("favoritesBtn").classList.remove("active");
+  renderGames();
+
+  document.querySelectorAll(".nav-link").forEach(link => {
+    link.classList.toggle("is-active", link.id === activeButtonId);
+  });
+
+  const target = $(sectionId);
+  if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+if ($("navFeaturedBtn")) {
+  $("navFeaturedBtn").addEventListener("click", () => {
+    navigateHomeSection("featuredSection", "navFeaturedBtn");
+  });
+}
+if ($("navGamesBtn")) {
+  $("navGamesBtn").addEventListener("click", () => {
+    navigateHomeSection("gamesSection", "navGamesBtn");
+  });
+}
+if ($("navCategoriesBtn")) {
+  $("navCategoriesBtn").addEventListener("click", () => {
+    navigateHomeSection("categoryStrip", "navCategoriesBtn");
+  });
+}
+
+document.addEventListener("click", event => {
+  const browseAll = event.target.closest("#relatedViewAllBtn");
+  if (!browseAll) return;
+  goHome({ replaceHistory: true });
+  resetFilters();
+  if ($("gamesSection")) {
+    $("gamesSection").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
 
 if ($("backBtn")) {
   $("backBtn").addEventListener("click", goHome);
@@ -2856,16 +2900,13 @@ if ($("favoritesBtn")) {
   });
 }
 
-if ($("exploreBtn")) {
-  $("exploreBtn").addEventListener("click", () => {
+document.querySelectorAll(".hero-explore-btn").forEach(button => {
+  button.addEventListener("click", () => {
     if ($("gamesSection")) {
-      $("gamesSection").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
+      $("gamesSection").scrollIntoView({ behavior: "smooth", block: "start" });
     }
   });
-}
+});
 
 if ($("resetFilters")) {
   $("resetFilters").addEventListener("click", resetFilters);
@@ -2968,21 +3009,110 @@ if (initialGame && GAMES.some(game => game.id === initialGame)) {
 }
 
 /* =========================================================
-   ADSTERRA SETUP
+   ADSTERRA PLACEMENTS
 
-   Your existing ad scripts in index.html remain unchanged.
-   The following are optional placeholders if you later wish
-   to insert a separate approved banner code in these slots.
+   Banner and native ad snippets are embedded directly in index.html
+   so their provider scripts execute normally. Do not inject these
+   snippets via innerHTML; browsers do not reliably execute those scripts.
    ========================================================= */
 
-// Top banner example:
-// $("topAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
-// $("topAdPlaceholder").classList.add("hidden");
 
-// Bottom banner example:
-// $("bottomAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
-// $("bottomAdPlaceholder").classList.add("hidden");
+/* =========================================================
+   PLAYPEAK HERO BANNER SLIDER
+   Auto-advances every 6.5 seconds, supports dots/arrows,
+   pauses when hovered/focused or tab hidden, and respects reduced motion.
+   ========================================================= */
+(() => {
+  const root = document.querySelector("[data-hero-slider]");
+  if (!root) return;
 
-// Game-player banner example:
-// $("playerAdCode").innerHTML = `PASTE_APPROVED_ADSTERRA_CODE`;
-// $("playerAdPlaceholder").classList.add("hidden");
+  const slides = Array.from(root.querySelectorAll("[data-hero-slide]"));
+  const dots = Array.from(root.querySelectorAll("[data-hero-to]"));
+  const counter = document.getElementById("heroCounterCurrent");
+  const progressFill = root.querySelector(".hero-progress-fill");
+  const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const delay = 6500;
+  let active = Math.max(0, slides.findIndex(slide => slide.classList.contains("is-active")));
+  let timer = null;
+  let paused = false;
+
+  if (!slides.length) return;
+
+  function resetProgress() {
+    if (!progressFill) return;
+    progressFill.classList.remove("is-running");
+    progressFill.style.animationDuration = `${delay}ms`;
+    void progressFill.offsetWidth;
+    if (!reducedMotion && !paused) progressFill.classList.add("is-running");
+  }
+
+  function stopTimer() {
+    if (timer !== null) {
+      window.clearTimeout(timer);
+      timer = null;
+    }
+  }
+
+  function scheduleNext() {
+    stopTimer();
+    resetProgress();
+    if (reducedMotion || paused || document.hidden || slides.length < 2) return;
+    timer = window.setTimeout(() => setSlide(active + 1), delay);
+  }
+
+  function setSlide(nextIndex) {
+    active = (nextIndex + slides.length) % slides.length;
+    slides.forEach((slide, index) => {
+      const isActive = index === active;
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+      if (isActive) slide.removeAttribute("inert");
+      else slide.setAttribute("inert", "");
+    });
+    dots.forEach((dot, index) => {
+      const isActive = index === active;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-pressed", String(isActive));
+    });
+    if (counter) counter.textContent = String(active + 1).padStart(2, "0");
+    scheduleNext();
+  }
+
+  root.querySelectorAll("[data-hero-prev]").forEach(button => {
+    button.addEventListener("click", () => setSlide(active - 1));
+  });
+  root.querySelectorAll("[data-hero-next]").forEach(button => {
+    button.addEventListener("click", () => setSlide(active + 1));
+  });
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => setSlide(Number(dot.dataset.heroTo) || 0));
+  });
+
+  root.addEventListener("pointerenter", () => {
+    paused = true;
+    stopTimer();
+    root.classList.add("is-paused");
+  });
+  root.addEventListener("pointerleave", () => {
+    paused = false;
+    root.classList.remove("is-paused");
+    scheduleNext();
+  });
+  root.addEventListener("focusin", () => {
+    paused = true;
+    stopTimer();
+    root.classList.add("is-paused");
+  });
+  root.addEventListener("focusout", event => {
+    if (root.contains(event.relatedTarget)) return;
+    paused = false;
+    root.classList.remove("is-paused");
+    scheduleNext();
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopTimer();
+    else scheduleNext();
+  });
+
+  setSlide(active);
+})();

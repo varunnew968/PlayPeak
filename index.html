@@ -3,75 +3,123 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="google-adsense-account" content="ca-pub-6633143653612883">
+<meta name="google-adsense-account" content="ca-pub-6633143653612883">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0072FF">
+  <!-- Ad units are placed in the labelled slots below; no duplicate popunder/social scripts in the head. -->
+  <meta name="theme-color" content="#071126">
   <meta name="color-scheme" content="light">
   <meta name="application-name" content="PlayPeak">
+  <link rel="icon" type="image/png" sizes="32x32" href="playpeak-favicon-32-v3.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="playpeak-favicon-16-v3.png?v=3">
+  <link rel="shortcut icon" href="playpeak-favicon-v3.ico?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-v3.png?v=3">
+
   <meta property="og:site_name" content="PlayPeak">
   <meta property="og:title" content="PlayPeak — Play something fun">
   <meta property="og:description" content="Discover great free browser games on PlayPeak. Instant play, no downloads.">
   <meta property="og:type" content="website">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <meta name="description"
-    content="Discover great free browser games on PlayPeak. Instant play, no downloads—just pick a game and play.">
+<meta name="description" content="Discover great free browser games on PlayPeak. Instant play, no downloads—just pick a game and play.">
   <title>PlayPeak — Free Online Games to Play Instantly</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@700;800;900;1000&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Top navigation: Poki-inspired floating pill navbar -->
   <header class="topbar">
-    <div class="topbar-container">
+    <div class="topbar-inner">
       <button class="brand" id="homeBtn" aria-label="PlayPeak home" title="PlayPeak home">
-        <img class="brand-logo" src="assets/playpeak-logo.svg" width="160" height="40" alt="PlayPeak">
+        <img class="brand-icon" src="assets/playpeak-icon-v3.png?v=3" width="34" height="34" alt=""><span class="brand-name">Play<span class="brand-name-accent">Peak</span></span>
       </button>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <button type="button" class="nav-link is-active" id="navFeaturedBtn">Featured</button>
+        <button type="button" class="nav-link" id="navGamesBtn">All games</button>
+        <button type="button" class="nav-link" id="navCategoriesBtn">Categories</button>
+      </nav>
       <form class="search" id="searchForm" role="search">
-        <span class="search-icon" aria-hidden="true">🔍</span>
-        <input id="searchInput" type="search" placeholder="Search games on PlayPeak..." autocomplete="off"
-          aria-label="Search games">
-        <kbd class="search-kbd">⌘K</kbd>
+        <span aria-hidden="true">⌕</span>
+        <input id="searchInput" type="search" placeholder="Search games..." autocomplete="off" aria-label="Search games">
+        <kbd>↵</kbd>
       </form>
-      <div class="nav-actions">
-        <button class="icon-btn" id="favoritesBtn" aria-label="Show favorites" title="Favorites">♥</button>
-      </div>
+      <button class="icon-btn favorites-btn" id="favoritesBtn" aria-label="Show favorite games" title="Saved games">
+        <span class="favorite-heart" aria-hidden="true">♡</span><span class="favorite-label">Saved</span>
+      </button>
     </div>
   </header>
 
   <main>
     <section id="homeView">
-      <section class="hero">
-        <div class="hero-copy">
-          <span class="eyebrow"><span class="live-dot"></span> YOUR NEXT PLAY STARTS HERE</span>
-          <h1>Big fun.<br><span>Zero downloads.</span></h1>
-          <p>Discover something fun. Jump in instantly and make every break better.</p>
-          <button class="primary-btn" id="exploreBtn">Explore games <span>↗</span></button>
-          <div class="hero-perks" aria-label="PlayPeak benefits">
-            <span><i aria-hidden="true">✓</i> Instant play</span>
-            <span><i aria-hidden="true">✓</i> No installs</span>
-            <span><i aria-hidden="true">✓</i> Play anywhere</span>
+      <section class="hero hero-slider" data-hero-slider aria-label="Featured PlayPeak gaming banners" aria-roledescription="carousel">
+        <div class="hero-slides">
+          <article class="hero-slide is-active" data-hero-slide="0" role="group" aria-roledescription="slide" aria-label="1 of 3" aria-hidden="false">
+            <img class="hero-slide-image" src="assets/hero-banners/neon-rush.webp" alt="A neon hypercar racing through a futuristic city" fetchpriority="high" decoding="async">
+            <div class="hero-slide-scrim"></div>
+            <div class="hero-copy hero-slide-copy">
+              <span class="eyebrow"><span class="live-dot"></span> YOUR NEXT PLAY STARTS HERE</span>
+              <h1>Big fun.<br><span>Zero downloads.</span></h1>
+              <p>Discover something fun. Jump in instantly and make every break better.</p>
+              <button class="primary-btn hero-explore-btn" id="exploreBtn">Explore games <span>↗</span></button>
+              <div class="hero-perks" aria-label="PlayPeak benefits">
+                <span><i aria-hidden="true">✓</i> Instant play</span>
+                <span><i aria-hidden="true">✓</i> No installs</span>
+                <span><i aria-hidden="true">✓</i> Play anywhere</span>
+              </div>
+            </div>
+            <span class="hero-scene-tag"><span class="hero-scene-dot"></span> NEON RUSH <span>01</span></span>
+          </article>
+          <article class="hero-slide" data-hero-slide="1" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true" inert>
+            <img class="hero-slide-image" src="assets/hero-banners/realm-breaker.webp" alt="A fantasy warrior faces a luminous dragon and portal" loading="lazy" decoding="async">
+            <div class="hero-slide-scrim"></div>
+            <div class="hero-copy hero-slide-copy">
+              <span class="eyebrow"><span class="live-dot"></span> EPIC ADVENTURES AWAIT</span>
+              <h1>Enter the<br><span>next dimension.</span></h1>
+              <p>Explore mysterious worlds, master new challenges, and make every move count.</p>
+              <button class="primary-btn hero-explore-btn">Explore games <span>↗</span></button>
+              <div class="hero-perks" aria-label="PlayPeak benefits">
+                <span><i aria-hidden="true">✓</i> Fresh worlds</span>
+                <span><i aria-hidden="true">✓</i> Instant action</span>
+                <span><i aria-hidden="true">✓</i> No installs</span>
+              </div>
+            </div>
+            <span class="hero-scene-tag"><span class="hero-scene-dot"></span> REALM BREAKER <span>02</span></span>
+          </article>
+          <article class="hero-slide" data-hero-slide="2" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true" inert>
+            <img class="hero-slide-image" src="assets/hero-banners/arcade-spark.webp" alt="A cheerful futuristic robot collecting glowing gems in an arcade world" loading="lazy" decoding="async">
+            <div class="hero-slide-scrim"></div>
+            <div class="hero-copy hero-slide-copy">
+              <span class="eyebrow"><span class="live-dot"></span> QUICK GAMES. BIG ENERGY.</span>
+              <h1>Make every break<br><span>legendary.</span></h1>
+              <p>From quick puzzle wins to colourful arcade adventures, your next favourite is one click away.</p>
+              <button class="primary-btn hero-explore-btn">Explore games <span>↗</span></button>
+              <div class="hero-perks" aria-label="PlayPeak benefits">
+                <span><i aria-hidden="true">✓</i> Quick sessions</span>
+                <span><i aria-hidden="true">✓</i> Big variety</span>
+                <span><i aria-hidden="true">✓</i> Play anywhere</span>
+              </div>
+            </div>
+            <span class="hero-scene-tag"><span class="hero-scene-dot"></span> ARCADE SPARK <span>03</span></span>
+          </article>
+        </div>
+        <div class="hero-slider-controls" aria-label="Hero banner controls">
+          <div class="hero-slider-dots" role="group" aria-label="Choose banner">
+            <button type="button" class="hero-dot is-active" data-hero-to="0" aria-label="Show banner 1" aria-pressed="true"></button>
+            <button type="button" class="hero-dot" data-hero-to="1" aria-label="Show banner 2" aria-pressed="false"></button>
+            <button type="button" class="hero-dot" data-hero-to="2" aria-label="Show banner 3" aria-pressed="false"></button>
+          </div>
+          <div class="hero-slider-actions">
+            <span class="hero-counter"><strong id="heroCounterCurrent">01</strong><span>/</span>03</span>
+            <button type="button" class="hero-arrow" data-hero-prev aria-label="Previous banner">←</button>
+            <button type="button" class="hero-arrow hero-arrow-next" data-hero-next aria-label="Next banner">→</button>
           </div>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="art-sun"></div>
-          <div class="art-star star-one">✦</div>
-          <div class="art-star star-two">✦</div>
-          <div class="art-controller"><span></span><i></i><b>＋</b><em>●</em></div>
-          <div class="art-orbit orbit-one"></div>
-          <div class="art-orbit orbit-two"></div>
-        </div>
+        <div class="hero-progress" aria-hidden="true"><span class="hero-progress-fill"></span></div>
       </section>
 
       <div class="ad-slot ad-top" aria-label="Advertisement" data-ad-slot="top-banner">
         <span class="ad-label">ADVERTISEMENT</span>
         <div class="ad-code ad-responsive-banners" id="topAdCode">
-          <!-- Desktop banner: 728 × 90 -->
+          <!-- Desktop banner: 728 × 90. The companion mobile unit is shown at small viewport widths. -->
           <div class="ad-unit ad-unit-desktop" aria-label="Desktop advertisement">
             <script>
               atOptions = {
@@ -84,7 +132,7 @@
             </script>
             <script src="https://bicea.org/22/d41f4b20a3de1a40f18b3a61ef566540"></script>
           </div>
-          <!-- Mobile banner: 320 × 50 -->
+          <!-- Mobile banner: 320 × 50. -->
           <div class="ad-unit ad-unit-mobile" aria-label="Mobile advertisement">
             <script>
               atOptions = {
@@ -131,8 +179,7 @@
       <div class="ad-slot ad-bottom ad-native-slot" aria-label="Advertisement" data-ad-slot="catalog-native-banner">
         <span class="ad-label">ADVERTISEMENT</span>
         <div class="ad-code native-ad-code" id="bottomAdCode">
-          <script async="async" data-cfasync="false"
-            src="https://bicea.org/21/1d3941c589157fb5980a046ad26aa5ed"></script>
+          <script async="async" data-cfasync="false" src="https://bicea.org/21/1d3941c589157fb5980a046ad26aa5ed"></script>
           <div id="container-1d3941c589157fb5980a046ad26aa5ed"></div>
         </div>
       </div>
@@ -149,11 +196,13 @@
       </div>
       <div class="player-layout">
         <div class="player-main">
+
           <div class="game-frame-wrap" id="gameFrameWrap">
             <iframe id="gamePlayerIframe" src="about:blank" title="PlayPeak game player" seamless="seamless"
               allowtransparency="true" allowfullscreen="true" frameborder="0" scrolling="no"
               style="width:100%;height:100%;border:0;display:block;" allow="autoplay; fullscreen; gamepad">
             </iframe>
+
             <div class="game-frame-placeholder" id="gameFramePlaceholder">
               <div class="placeholder-icon">🎮</div>
               <h2>Loading game…</h2>
@@ -196,8 +245,7 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-brand"><img class="footer-logo" src="assets/playpeak-logo.svg" width="160" height="40"
-        alt="PlayPeak"></div>
+    <div class="footer-brand"><img class="footer-brand-icon" src="assets/playpeak-icon-v3.png?v=3" width="28" height="28" alt=""><span class="footer-brand-name">Play<span>Peak</span></span></div>
     <p>Your next favourite game is one click away.</p>
     <div class="footer-links"><a href="#privacy" id="privacyLink">Privacy</a><a href="#contact"
         id="contactLink">Contact</a><a href="#licensing" id="licensingLink">Game credits</a></div>
