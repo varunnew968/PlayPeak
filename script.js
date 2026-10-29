@@ -263,13 +263,11 @@ function safeHttps(url) {
    Uses the official embedded-game wrapper.
    ========================================================= */
 
+
 function buildEmbedUrl(game) {
   const gameUrl =
     `https://html5.gamedistribution.com/${game.embedId}/`;
 
-  // Use the current page URL as the game's referrer.
-  // Game links will use ?game=game-id so every game can
-  // have its own shareable page URL.
   const pageUrl = window.location.href;
 
   return (
@@ -283,6 +281,7 @@ function buildEmbedUrl(game) {
     "&gd_sdk_referrer_url=" + encodeURIComponent(pageUrl)
   );
 }
+
 
 /* =========================================================
    GAME CARD WITH REAL BANNER IMAGES
